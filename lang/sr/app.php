@@ -1,0 +1,48 @@
+<?php
+
+return [
+
+    'naslovna' => 'Početna',
+    'edukacije' => 'Edukacije',
+    'novosti' => 'Novosti',
+    'usluge' => 'Usluge',
+    'galerija' => 'Galerija',
+    'onama' => 'O nama',
+    'navigacija' => 'Navigacija',
+    'kontakt' => 'Kontakt',
+    'zakazite' => 'ZAKAŽITE PREGLED',
+    'pozovite' => 'POZOVITE NAS',
+    'telefon' => 'Telefon',
+    'viber' => 'Viber',
+    'email' => 'Email',
+    'radnovrijeme' => 'RADNO VRIJEME',
+    'ponpet' => 'Pon - Pet:',
+    'sub' => 'Sub:',
+    'lokacija' => 'Lokacija',
+    'dalje' => 'DALJE',
+    'kontaktIme' => 'Ime',
+    'kontaktPrezime' => 'Prezime',
+    'kontaktEmail' => 'E-Mail adresa',
+    'kontaktTelefon' => 'Kontakt telefon',
+    'kontaktPoruka' => 'Poruka',
+    'kontaktGodine' => 'Godina Rodjenja',
+    'kontaktSnimak' => 'POŠALJITE NAM SNIMAK ILI SLIKU VAŠIH ZUBA',
+    'posalji' => 'Pošaljite',
+    'slike' => 'Ovaj album nema dodate slike',
+    'ucitaj' => 'Učitaj više',
+    'ucitavanje' => 'Učitavanje',
+    'greska' => 'Greška',
+    'kontaktGreska' => 'Molimo provjerite sva polja označena crvenom bojom!',
+    'uspeh' => 'Uspiješno ste poslali poruku.',
+    'prikazimapu' => 'Prikaži mapu',
+    'pocetak' => 'Vratite se na početak',
+
+    'kontaktZainteresovan' => 'Zainteresovan sam za',
+    'kontaktEstetika' => 'ESTETIKA OSMEHA',
+    'kontaktNadoknada' => 'NADOKNADA NEDOSTAJUĆIH ZUBA',
+    'kontaktIspravljanje' => 'ISPRAVLJANJE ZUBA (FOLIJE, PROTEZE)',
+    'kontaktPopravka' => 'POPRAVKA ILI LEČENJE ZUBA',
+    'kontaktIzbeljivanje' => 'IZBELJIVANJE ZUBA',
+
+
+];
