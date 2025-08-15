@@ -30,6 +30,7 @@ class HomeController extends Controller
 
     public function contact(Request $request)
     {
+        dd($request->all());
         $request->validate([
             'firstName' => ['required', 'string', 'max:191'],
             'phone' => ['required', 'string'],
