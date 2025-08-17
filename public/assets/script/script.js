@@ -6,6 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const progressSteps = document.querySelectorAll(".form-progress-step");
   const progressWrapper = document.querySelector(".form-progress-wrapper");
   const choiceCards = document.querySelectorAll(".choice-card");
+  const choiceCardsS0 = document.querySelectorAll(".card-s0");
+  const choiceCardsS1 = document.querySelectorAll(".card-s1");
+  const choiceCardsS1_1 = document.querySelectorAll(".card-s1-1");
+  const choiceCardsS2 = document.querySelectorAll(".card-s2");
+  const choiceCardsS2_1 = document.querySelectorAll(".card-s2-1");
+  const choiceCardsS3 = document.querySelectorAll(".card-s3");
+  const choiceCardsS3_1 = document.querySelectorAll(".card-s3-1");
+  const choiceCardsS3_2 = document.querySelectorAll(".card-s3-2");
+
 
   let currentStep = 0;
   const totalSteps = 7;
@@ -19,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateRangeColor(range) {
       const min = parseInt(range.min) || 1;
       const max = parseInt(range.max) || 5;
-      const value = parseInt(range.value) || 3;
+      const value = parseInt(range.value) || 4;
       const percentage = ((value - min) / (max - min)) * 100;
       range.style.setProperty("--value", `${percentage}%`);
     }
@@ -49,17 +58,153 @@ document.addEventListener("DOMContentLoaded", function () {
 
   initRangeSliders();
 
-  choiceCards.forEach((card) => {
+  // choiceCards.forEach((card) => {
+  //   card.addEventListener("click", function () {
+  //     const parentStep = this.closest(".form-step");
+  //     parentStep.querySelectorAll(".choice-card").forEach((c) => {
+  //       c.classList.remove("selected");
+  //     });
+
+  //     this.classList.add("selected");
+  //   });
+  // });
+
+      choiceCardsS0.forEach((card) => {
     card.addEventListener("click", function () {
       const parentStep = this.closest(".form-step");
-      parentStep.querySelectorAll(".choice-card").forEach((c) => {
+
+      parentStep.querySelectorAll(".card-s0").forEach((c) => {
         c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
       });
 
       this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
     });
   });
 
+    choiceCardsS1.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s1").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      choiceCardsS2.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+    choiceCardsS2_1.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-1").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+    choiceCardsS3.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s3").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      choiceCardsS3_2.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s3-2").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      choiceCardsS3_1.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s3-1").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+  const floorSelection = document.getElementById("floorSelection");
+
+  choiceCardsS1_1.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s1-1").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+
+      // === Show/Hide Floor Selection ===
+      if (input && (input.value === "Dachterrasse" || input.value === "Balkon")) {
+        floorSelection.classList.remove("d-none");
+      } else {
+        floorSelection.classList.add("d-none");
+      }
+    });
+  });
   const formSelectionBtns = document.querySelectorAll(".form-selection-btn");
   formSelectionBtns.forEach((btn) => {
     btn.addEventListener("click", function (e) {
