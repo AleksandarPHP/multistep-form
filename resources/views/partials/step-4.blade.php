@@ -11,7 +11,7 @@
                             <input
                               type="number"
                               class="form-control text-center"
-                              value="3"
+                              value="4.5"
                               name="width"
                               min="1"
                               max="5"
@@ -26,7 +26,7 @@
                               class="form-range"
                               min="2.8"
                               max="7"
-                              value="4"
+                              value="4.5"
                               step="0.1"
                               id="floorRange"
                             />
@@ -47,7 +47,7 @@
                             <input
                               type="number"
                               class="form-control text-center"
-                              value="3"
+                              value="1.5"
                               name="length"
                               min="1"
                               max="5"
@@ -63,7 +63,7 @@
                               step="0.5"
                               min="1.5"
                               max="4"
-                              value="3"
+                              value="1.5"
                               id="floorRange"
                             />
                             <span class="range-value ms-2">4</span>
