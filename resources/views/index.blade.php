@@ -8,10 +8,15 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <link href="{{ asset('favicon.ico') }}" rel="shortcut icon" type="image/x-icon" />
     <link rel="stylesheet" href="{{ asset('assets/style/style.css') }}" />
+    <link rel="stylesheet" href="{{asset('assets/style/jquery.toast.css')}}">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <script src="{{asset('assets/script/jquery.toast.js')}}"></script>
   </head>
   <body>
-    <form class="form-wizard py-5" action="{{url('konfigurator')}})" method="POST">
+    <form class="form-wizard py-5" action="{{url('konfigurator')}}" method="POST">
       @csrf
       <div class="container">
         <div class="row justify-content-center mb-5">
@@ -50,7 +55,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Ich weiß schon was ich will</p>
-                        <input class="d-none" type="radio" name="advisor" id="Ich weiß schon was ich will">
+                        <input class="d-none" type="radio" name="advisor" value="Ich weiß schon was ich will">
                       </div>
                     </div>
                   </div>
@@ -65,7 +70,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Ich suche Beratung</p>
-                        <input class="d-none" type="radio" name="advisor" id="" value="Ich suche Beratung">
+                        <input class="d-none" type="radio" name="advisor" value="Ich suche Beratung">
                       </div>
                     </div>
                   </div>
@@ -88,15 +93,17 @@
                       </h5>
 
                       <div class="row mb-3">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                          <button class="form-selection-btn w-100 py-3">
-                            Frau
-                          </button>
-                        </div>
                         <div class="col-md-6">
                           <button class="form-selection-btn w-100 py-3">
                             Herr
                           </button>
+                          <input class="d-none" type="radio" name="sex" value="Herr" id="herr">
+                        </div>
+                        <div class="col-md-6 mb-3 mb-md-0">
+                          <button class="form-selection-btn w-100 py-3">
+                            Frau
+                          </button>
+                          <input class="d-none" type="radio" name="sex" value="Frau" id="frau">
                         </div>
                       </div>
 
@@ -106,6 +113,7 @@
                             <label for="firstname">Vorname*:</label>
                             <input
                               type="text"
+                              name="firstname"
                               class="form-control"
                               id="firstname"
                               required
@@ -117,6 +125,7 @@
                             <label for="lastname">Nachname*:</label>
                             <input
                               type="text"
+                              name="lastname"
                               class="form-control"
                               id="lastname"
                               required
@@ -131,6 +140,7 @@
                             <label for="phone">Telefon*:</label>
                             <input
                               type="tel"
+                              name="phone"
                               class="form-control"
                               id="phone"
                               required
@@ -142,6 +152,7 @@
                             <label for="email">E-Mail*:</label>
                             <input
                               type="email"
+                              name="email"
                               class="form-control"
                               id="email"
                               required
@@ -156,6 +167,7 @@
                             <label for="street">Straße*:</label>
                             <input
                               type="text"
+                              name="street"
                               class="form-control"
                               id="street"
                               required
@@ -167,6 +179,7 @@
                             <label for="housenumber">Hausnummer*:</label>
                             <input
                               type="text"
+                              name="housenumber"
                               class="form-control"
                               id="housenumber"
                               required
@@ -181,6 +194,7 @@
                             <label for="plz">PLZ*:</label>
                             <input
                               type="text"
+                              name="plz"
                               class="form-control"
                               id="plz"
                               required
@@ -192,6 +206,7 @@
                             <label for="city">Stadt*:</label>
                             <input
                               type="text"
+                              name="city"
                               class="form-control"
                               id="city"
                               required
@@ -229,6 +244,40 @@
     </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/script/script.js"></script>
+    <script src="{{asset('assets/script/script.js')}}"></script>
+    <script>
+      $(document).ready(function(e) {
+        @if(session('status'))
+        $.toast({
+          heading: 'Es ist mir gelungen..',
+          text: {!! json_encode(session('status')) !!},
+          hideAfter: 6000,
+          position: 'top-right',
+          icon: 'success',
+          loader: true,
+          loaderBg: '#2492D1'
+        });
+        @endif
+        @if($errors->any())
+        $.toast({
+          heading: 'Error.',
+          text: [
+            @foreach($errors->all() as $error)
+            {!! json_encode($error) !!},
+            @endforeach
+          ],
+          hideAfter: 7000,
+          position: 'top-right',
+          icon: 'error',
+          loader: true,
+          loaderBg: '#2492D1'
+        });
+        @endif
+      })
+      function getDate(){
+          var today = new Date();
+          document.getElementById("date").value = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + ('0' + today.getDate()).slice(-2);
+      }
+  </script>
   </body>
 </html>

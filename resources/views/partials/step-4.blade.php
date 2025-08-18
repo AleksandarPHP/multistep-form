@@ -12,6 +12,7 @@
                               type="number"
                               class="form-control text-center"
                               value="3"
+                              name="width"
                               min="1"
                               max="5"
                             />
@@ -46,9 +47,10 @@
                             <input
                               type="number"
                               class="form-control text-center"
-                              value="4"
-                              min="2.8"
-                              max="7"
+                              value="3"
+                              name="length"
+                              min="1"
+                              max="5"
                             />
                           </div>
                         </div>

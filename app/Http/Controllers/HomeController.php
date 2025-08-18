@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use App\Models\Apartment;
+use App\Notifications\Konfigurator;
 use App\Models\Floor;
+use Exception;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
+use Notification;
 
 class HomeController extends Controller
 {
@@ -28,19 +31,38 @@ class HomeController extends Controller
         return view('detail', ['apartmant' => $apartmant, 'floor' => $floor]);
     }
 
-    public function contact(Request $request)
+    public function konfigurator(Request $request)
     {
-        dd($request->all());
-        $request->validate([
-            'firstName' => ['required', 'string', 'max:191'],
-            'phone' => ['required', 'string'],
-            'email' => ['required', 'string', 'max:191'],
-            'lastName' => ['required', 'string'],
-            'question' => ['required', 'string'],
-        ]);   
 
+        $html = '<b>Was suchen sie:</b> '.htmlspecialchars($request->input('advisor')).'<br>';
 
+        if($request->input('product')!='') $html .= '<b>Produkte :</b> '.htmlspecialchars($request->input('product')).'<br>';
+        if($request->input('product_position')!='') $html .= '<b>Wo soll das Produkt stehen:</b> '.htmlspecialchars($request->input('product_position')).'<br>';
+        if($request->input('design')!='') $html .= '<b>Welche Kassetten-Markisen Ausführung wünschen Sie sich:</b> '.htmlspecialchars($request->input('design')).'<br>';
+        if($request->input('kind_instalation')!='') $html .= '<b>Welche Montageart wünschen Sie sich:</b> '.htmlspecialchars($request->input('kind_instalation')).'<br>';
+        if($request->input('valance_blind')!='') $html .= '<b>Wünschen Sie sich ein Volant-Rollo:</b> '.htmlspecialchars($request->input('valance_blind')).'<br>';
+        if($request->input('equipment')!='') $html .= '<b>Welches Zubehör benötigen Sie?:</b> '.htmlspecialchars($request->input('equipment')).'<br>';
+        if($request->input('control')!='') $html .= '<b>Wünschen Sie sich eine Steuerung:</b> '.htmlspecialchars($request->input('control')).'<br>';
+        if($request->input('width')!='') $html .= '<b>Bitte geben Sie die Breite an:</b> '.htmlspecialchars($request->input('width')).'<br>';
+        if($request->input('length')!='') $html .= '<b>Bitte geben Sie die Länge an:</b> '.htmlspecialchars($request->input('length')).'<br>';
+        if($request->input('design_color')!='') $html .= '<b>Welche Stofffarbe wünschen Sie sich:</b> '.htmlspecialchars($request->input('design_color')).'<br>';
+        if($request->input('fabric_color')!='') $html .= '<b>Welches Muster wünschen Sie sich:</b> '.htmlspecialchars($request->input('fabric_color')).'<br>';
+        if($request->input('frame_color')!='') $html .= '<b>Welche Gestellfarbe wünschen Sie sich:</b> '.htmlspecialchars($request->input('frame_color')).'<br>';
+        if($request->input('message')!='') $html .= '<b>Möchten Sie uns noch etwas mitteilen:</b> '.htmlspecialchars($request->input('message')).'<br>';
+        if($request->input('sex')!='') $html .= '<b>Geschlecht:</b> '.htmlspecialchars($request->input('sex')).'<br>';
+        if($request->input('firstname')!='') $html .= '<b>Vorname:</b> '.htmlspecialchars($request->input('firstname')).'<br>';
+        if($request->input('lastname')!='') $html .= '<b>Nachname:</b> '.htmlspecialchars($request->input('lastname')).'<br>';
+        if($request->input('phone')!='') $html .= '<b>Telefon:</b> '.htmlspecialchars($request->input('phone')).'<br>';
+        if($request->input('email')!='') $html .= '<b>Email:</b> '.htmlspecialchars($request->input('email')).'<br>';
+        if($request->input('street')!='') $html .= '<b>Straße:</b> '.htmlspecialchars($request->input('street')).'<br>';
+        if($request->input('housenumber')!='') $html .= '<b>Hausnummer:</b> '.htmlspecialchars($request->input('housenumber')).'<br>';
+        if($request->input('plz')!='') $html .= '<b>PLZ:</b> '.htmlspecialchars($request->input('plz')).'<br>';
+        if($request->input('city')!='') $html .= '<b>Stadt:</b> '.htmlspecialchars($request->input('city')).'<br>';
 
-        return redirect()->back()->with(['status' => 'Vasa poruka je uspijesno poslana!']);
+        try {
+             Notification::route('mail',' acocoaj123@gmail.com')->notify(new Konfigurator($html, $request->input('email'), $request->input('firstname')));
+        } catch (Exception $e) {}
+
+        return redirect('/')->with(['status' => 'Ihre Nachricht wurde erfolgreich versendet!']);
     }
 }

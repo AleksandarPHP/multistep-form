@@ -4,27 +4,11 @@ use Illuminate\Support\Facades\Route;
 
 $routes = [
     '/' => 'index',
-    'sadrzaj' => 'sadrzaj',
-    'apartmani' => 'apartmani', 
-    'o-nama' => 'o-nama', 
-    'tehnicki-prikaz' => 'tehnicki-prikaz',
-    'lokacija' => 'lokacija',
-    'sprat/1' => 'prizemlje',
-    'sprat/2' => 'sprat-1',
-    'sprat/3' => 'sprat-2',
-    'sprat/4' => 'sprat-3',
-    'sprat/5' => 'sprat-4',
-    'sprat/6' => 'sprat-5',
-    'sprat/7' => 'sprat-6',
-    'sprat/8' => 'sprat-7',
-    'sprat/9' => 'sprat-8',
-    'najam-apartmana' => 'najam-apartmana',
-    'kupovina' => 'kupovina'
 ];
 Route::get('galerija', [App\Http\Controllers\HomeController::class, 'gallery']);
 // Route::get('sprat/{id}', [App\Http\Controllers\HomeController::class, 'floors']);
 Route::get('apartmani/{id}', [App\Http\Controllers\HomeController::class, 'apartmant']);
-Route::post('kontakt', [App\Http\Controllers\HomeController::class, 'contact']);
+Route::post('konfigurator', [App\Http\Controllers\HomeController::class, 'konfigurator']);
 
 Route::group(['prefix' => 'en'], function () use ($routes) {
     foreach ($routes as $uri => $view) {
