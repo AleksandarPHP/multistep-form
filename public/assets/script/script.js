@@ -11,6 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const choiceCardsS1_1 = document.querySelectorAll(".card-s1-1");
   const choiceCardsS2 = document.querySelectorAll(".card-s2");
   const choiceCardsS2_1 = document.querySelectorAll(".card-s2-1");
+  const choiceCardsS2_2 = document.querySelectorAll(".card-s2-2");
+  const choiceCardsS2_3 = document.querySelectorAll(".card-s2-3");
+  const choiceCardsS2_4 = document.querySelectorAll(".card-s2-4");
+  const choiceCardsS2_5 = document.querySelectorAll(".card-s2-5");
+  const choiceCardsS2_6 = document.querySelectorAll(".card-s2-6");
+  const choiceCardsS2_7 = document.querySelectorAll(".card-s2-7");
+  const choiceCardsS2_8 = document.querySelectorAll(".card-s2-8");
+  const choiceCardsS2_9 = document.querySelectorAll(".card-s2-9");
+  const choiceCardsS2_10 = document.querySelectorAll(".card-s2-10");
+  const choiceCardsS2_11 = document.querySelectorAll(".card-s2-11");
+  const choiceCardsS2_12 = document.querySelectorAll(".card-s2-12");
+  const choiceCardsS2_13 = document.querySelectorAll(".card-s2-13");
   const choiceCardsS3 = document.querySelectorAll(".card-s3");
   const choiceCardsS3_1 = document.querySelectorAll(".card-s3-1");
   const choiceCardsS3_2 = document.querySelectorAll(".card-s3-2");
@@ -172,6 +184,320 @@ document.querySelectorAll(".form-step").forEach((step) => {
     if (input) input.checked = true;
   }
 });
+
+
+
+
+
+
+
+    choiceCardsS2_2.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-2").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_2Card = step.querySelector(".card-s2-2");
+  if (first2_2Card) {
+    first2_2Card.classList.add("selected");
+    const input = first2_2Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_3.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-3").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_3Card = step.querySelector(".card-s2-3");
+  if (first2_3Card) {
+    first2_3Card.classList.add("selected");
+    const input = first2_3Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_4.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-4").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_4Card = step.querySelector(".card-s2-4");
+  if (first2_4Card) {
+    first2_4Card.classList.add("selected");
+    const input = first2_4Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_5.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-5").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_5Card = step.querySelector(".card-s2-5");
+  if (first2_5Card) {
+    first2_5Card.classList.add("selected");
+    const input = first2_5Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_6.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-6").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_6Card = step.querySelector(".card-s2-6");
+  if (first2_6Card) {
+    first2_6Card.classList.add("selected");
+    const input = first2_6Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_7.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-7").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_7Card = step.querySelector(".card-s2-7");
+  if (first2_7Card) {
+    first2_7Card.classList.add("selected");
+    const input = first2_7Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_8.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-8").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_8Card = step.querySelector(".card-s2-8");
+  if (first2_8Card) {
+    first2_8Card.classList.add("selected");
+    const input = first2_8Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_9.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-9").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_9Card = step.querySelector(".card-s2-9");
+  if (first2_9Card) {
+    first2_9Card.classList.add("selected");
+    const input = first2_9Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_10.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-10").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_10Card = step.querySelector(".card-s2-10");
+  if (first2_10Card) {
+    first2_10Card.classList.add("selected");
+    const input = first2_10Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_11.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-11").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_11Card = step.querySelector(".card-s2-11");
+  if (first2_11Card) {
+    first2_11Card.classList.add("selected");
+    const input = first2_11Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_12.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-12").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_12Card = step.querySelector(".card-s2-12");
+  if (first2_12Card) {
+    first2_12Card.classList.add("selected");
+    const input = first2_12Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+    choiceCardsS2_13.forEach((card) => {
+    card.addEventListener("click", function () {
+      const parentStep = this.closest(".form-step");
+
+      parentStep.querySelectorAll(".card-s2-13").forEach((c) => {
+        c.classList.remove("selected");
+        const input = c.querySelector('input[type="radio"]');
+        if (input) input.checked = false;
+      });
+
+      this.classList.add("selected");
+      const input = this.querySelector('input[type="radio"]');
+      if (input) input.checked = true;
+    });
+  });
+
+      document.querySelectorAll(".form-step").forEach((step) => {
+  const first2_13Card = step.querySelector(".card-s2-13");
+  if (first2_13Card) {
+    first2_13Card.classList.add("selected");
+    const input = first2_13Card.querySelector('input[type="radio"]');
+    if (input) input.checked = true;
+  }
+});
+
+
+
+
+
+
+
+
 
     choiceCardsS3.forEach((card) => {
     card.addEventListener("click", function () {
