@@ -4,18 +4,18 @@
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
-        <a href="{{ url('cms') }}">POČETNA</a>
+        <a href="{{ url('cms') }}">HOME</a>
     </li>
     <li class="breadcrumb-item active">Podesavanja</li>
 </ol>
 <h1>Podesavanja</h1>
 <hr>
-<div class="row change-language">
+{{-- <div class="row change-language">
     <div class="col-md-12">
         <a href="{{ url()->current() }}?lang=sr"><button class="btn btn{{ $lang=='sr' ? '-danger' : '' }} mb-3">SR</button></a>
         <a href="{{ url()->current() }}?lang=en"><button class="btn btn{{ $lang=='en' ? '-danger' : '' }} mb-3">EN</button></a>
     </div>
-</div>
+</div> --}}
 <div class="row">
     <div class="col-md-12">
         <form method="post" action="{{ url('cms/settings/'.$item->id) }}"enctype="multipart/form-data">

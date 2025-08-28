@@ -3,7 +3,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ url('cms') }}">POČETNA</a>
+                <a href="{{ url('cms') }}">HOME</a>
             </li>
             <li class="breadcrumb-item active">Korisnici</li>
         </ol>
@@ -42,7 +42,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label class="checkbox-inline">
-                                    <input type="checkbox" name="is_active" value="1" {{ (($errors->any() && old('is_active') || (!$errors->any() && $user->is_active))) ? 'checked' : '' }}> Aktivan?
+                                    <input type="checkbox" name="is_active" value="1" {{ (($errors->any() && old('is_active') || (!$errors->any() && $user->is_active))) ? 'checked' : '' }}> Aktiv?
                                 </label>
                             </div>
                         </div>

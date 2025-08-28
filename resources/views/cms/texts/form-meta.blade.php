@@ -4,7 +4,7 @@
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
-        <a href="{{ url('cms') }}">POČETNA</a>
+        <a href="{{ url('cms') }}">HOME</a>
     </li>
     <li class="breadcrumb-item active">Stranice</li>
 </ol>
@@ -27,8 +27,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="title">Naziv</label>
-                        <input name="title" type="text" class="form-control" id="title" placeholder="Naziv" value="{{ old('title', $item->getTranslation('title', $lang, false)) }}" {!! $errors->has('title') ? 'style="border-color:red;"' : '' !!}>
+                        <label for="title">Name</label>
+                        <input name="title" type="text" class="form-control" id="title" placeholder="Name" value="{{ old('title', $item->getTranslation('title', $lang, false)) }}" {!! $errors->has('title') ? 'style="border-color:red;"' : '' !!}>
                     </div>
                 </div>
                 <div class="col-md-12"><hr></div>

@@ -4,28 +4,19 @@
   <nav>
     <ul>
       <li @if(request()->path() === 'cms') class="active" @endif>
-        <a href="{{ url('cms') }}"><i class="fas fa-home"></i>Kontrolna tabla</a>
+        <a href="{{ url('cms') }}"><i class="fas fa-home"></i>Bedienfeld</a>
       </li>
-      <li @if(request()->is('cms/floors*'))class="active"@endif>
-        <a href="{{ url('cms/floors') }}"><i class="fas fa-cubes"></i>Spratovi</a>
+      <li @if(request()->is('cms/products*'))class="active"@endif>
+        <a href="{{ url('cms/products') }}"><i class="fas fa-cubes"></i>Produkte</a>
       </li>
-      <li @if(request()->is('cms/apartments*'))class="active"@endif>
-        <a href="{{ url('cms/apartments') }}"><i class="fas fa-building"></i>Apartmani</a>
-      </li>
-      <li @if(request()->is('cms/galleries*'))class="active"@endif>
-        <a href="{{ url('cms/galleries') }}"><i class="fas fa-image"></i>Albumi</a>
+      <li @if(request()->is('cms/product-position*'))class="active"@endif>
+        <a href="{{ url('cms/product-position') }}"><i class="fas fa-building"></i>Produkte Position</a>
       </li>
       <li @if(request()->is('cms/settings/1/edit*'))class="active"@endif>
-        <a href="{{ url('cms/settings/1/edit') }}"><i class="fas fa-cog"></i>Podesavanja</a>
-      </li>
-      <li @if(request()->is('cms/sliders*'))class="active"@endif>
-        <a href="{{ url('cms/sliders') }}"><i class="fas fa-desktop"></i>Slajderi</a>
-      </li>
-      <li @if(request()->is('cms/texts*'))class="active"@endif>
-        <a href="{{ url('cms/texts') }}"><i class="fas fa-text-width"></i>Tekstovi</a>
+        <a href="{{ url('cms/settings/1/edit') }}"><i class="fas fa-cog"></i>Settings</a>
       </li>
       <li @if(request()->is('cms/users*'))class="active"@endif>
-        <a href="{{ url('cms/users') }}"><i class="fas fa-users"></i>Korisnici</a>
+        <a href="{{ url('cms/users') }}"><i class="fas fa-users"></i>Benutzer</a>
       </li>
     </ul>
   </nav>

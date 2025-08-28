@@ -4,7 +4,7 @@
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
-        <a href="{{ url('cms') }}">POČETNA</a>
+        <a href="{{ url('cms') }}">HOME</a>
     </li>
     <li class="breadcrumb-item active">Stranice</li>
 </ol>
@@ -19,17 +19,17 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Naziv</th>
+                    <th>Name</th>
                     <th>Status</th>
-                    <th class="nosort text-center">Akcija</th>
+                    <th class="nosort text-center">Aktion</th>
                 </tr>
                 </thead>
                 <tfoot>
                 <tr>
                     <th>ID</th>
-                    <th>Naziv</th> 
+                    <th>Name</th> 
                     <th>Status</th>
-                    <th class="nosort text-center">Akcija</th>
+                    <th class="nosort text-center">Aktion</th>
                 </tr>
                 </tfoot>
             </table>
@@ -54,22 +54,22 @@ $(document).ready(function() {
         'aTargets': ['nosort']
     }],
     'language': {
-        "sEmptyTable":     "Nema podataka u tabeli",
-        "sInfo":           "Prikaz _START_ do _END_ od ukupno _TOTAL_ zapisa",
-        "sInfoEmpty":      "Prikaz 0 do 0 od ukupno 0 zapisa",
-        "sInfoFiltered":   "(filtrirano od ukupno _MAX_ zapisa)",
+        "sEmptyTable":     "Die Tabelle enthält keine Daten.",
+        "sInfo":           "Anzeige_START_ do _END_ od gesamt _TOTAL_ Aufzeichnungen",
+        "sInfoEmpty":      "Anzeige0 do 0 od gesamt 0 Aufzeichnungen",
+        "sInfoFiltered":   "(filtrirano od gesamt _MAX_ Aufzeichnungen)",
         "sInfoPostFix":    "",
         "sInfoThousands":  ".",
-        "sLengthMenu":     "Prikaži _MENU_ zapisa",
+        "sLengthMenu":     "Zeigen _MENU_ Aufzeichnungen",
         "sLoadingRecords": "Učitavanje...",
         "sProcessing":     "Obrada...",
-        "sSearch":         "Pretraga:",
+        "sSearch":         "Suchen:",
         "sZeroRecords":    "Nisu pronađeni odgovarajući zapisi",
         "oPaginate": {
-            "sFirst":    "Početna",
+            "sFirst":    "HOME",
             "sLast":     "Poslednja",
-            "sNext":     "Sledeća",
-            "sPrevious": "Predhodna"
+            "sNext":     "Nächste",
+            "sPrevious": "Vorherige"
         },
         "oAria": {
             "sSortAscending":  ": aktivirajte da sortirate kolonu uzlazno",

@@ -2,7 +2,7 @@
 
 return [
 
-    'naslovna' => 'Početna',
+    'naslovna' => 'HOME',
     'edukacije' => 'Edukacije',
     'novosti' => 'Novosti',
     'usluge' => 'Usluge',
@@ -34,7 +34,7 @@ return [
     'greska' => 'Greška',
     'kontaktGreska' => 'Molimo provjerite sva polja označena crvenom bojom!',
     'uspeh' => 'Uspiješno ste poslali poruku.',
-    'prikazimapu' => 'Prikaži mapu',
+    'prikazimapu' => 'Zeigen mapu',
     'pocetak' => 'Vratite se na početak',
 
     'kontaktZainteresovan' => 'Zainteresovan sam za',

@@ -9,12 +9,13 @@
                         <div class="col-md-3 col-sm-4">
                           <div class="form-group">
                             <input
-                              type="number"
-                              class="form-control text-center"
-                              value="4.5"
-                              name="width"
-                              min="1"
-                              max="5"
+                              type="number" 
+                              class="form-control text-center" 
+                              value="4.5" 
+                              name="width" 
+                              min="1" 
+                              max="5" 
+                              step="0.1"
                             />
                           </div>
                         </div>
@@ -28,7 +29,7 @@
                               max="7"
                               value="4.5"
                               step="0.1"
-                              id="floorRange"
+                              id="floorRange1"
                             />
                             <span class="range-value ms-2">7</span>
                           </div>
@@ -47,10 +48,11 @@
                             <input
                               type="number"
                               class="form-control text-center"
-                              value="1.5"
+                              value="4.5"
                               name="length"
                               min="1"
                               max="5"
+                              step="0.5"
                             />
                           </div>
                         </div>

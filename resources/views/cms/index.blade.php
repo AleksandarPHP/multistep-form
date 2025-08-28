@@ -3,13 +3,13 @@
 @section('content')
       <div class="row">
         <div class="col-12">
-          <h1 class="title">Početna</h1>
+          <h1 class="title">HOME</h1>
         </div>
       </div>
       <div class="row">
         @php
         $url = 'cms';
-        $title = 'Kontrolna tabla';
+        $title = 'Bedienfeld';
         $icon = 'dashboard';
         @endphp
         <div class="col-md-4">
@@ -21,13 +21,10 @@
         </div>
         @php
         $moduli = array(
-          array('cms/floors', 'Spratovi', 'cubes'),
-          array('cms/apartments', 'Apartmani', 'building'),
-          array('cms/galleries', 'Albumi', 'image'),
-          array('cms/settings/1/edit', 'Podesavanja', 'cog'),
-          array('cms/sliders', 'Slajderi', 'desktop'),
-          array('cms/texts', 'Tekstovi', 'text-width'),
-          array('cms/users', 'Korisnici', 'users'),
+          array('cms/products', 'Produkte', 'cubes'),
+          array('cms/products-position', 'Produkte position', 'building'),
+          array('cms/settings/1/edit', 'Settings', 'cog'),
+          array('cms/users', 'Benutzer', 'users'),
 
         );
         @endphp

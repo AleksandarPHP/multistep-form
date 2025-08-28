@@ -10,7 +10,7 @@
     <div class="col">
       <h5>Specijalista</h5>
       <select class="default_select" name="worker" @error('worker') style="border-color:red;" @enderror>
-        <option value="">Prikaži sve</option>
+        <option value="">Zeigen sve</option>
         @foreach ($specialists as $specialist)
         <option value="{{ $specialist->id }}" @if(old('worker', $worker) == $specialist->id) selected @endif>{{ $specialist->name }}</option>    
         @endforeach
@@ -21,14 +21,14 @@
       <h5>Usluga</h5>
       <div class="services_select_wrap mb-3">
         <select id="services_select_filter" class="default_select" name="service" data-id="{{ old('service', $service) }}">
-          <option value="">Prikaži sve</option>
+          <option value="">Zeigen sve</option>
         </select>
       </div>
     </div>
     <div class="col">
       <h5>Status</h5>
       <select class="default_select" name="status" @error('status') style="border-color:red;" @enderror>
-        <option value="">Prikaži sve</option>
+        <option value="">Zeigen sve</option>
         <option value="0" @if(old('status', $status) == "0") selected @endif>Na čekanju</option>
         <option value="1" @if(old('status', $status) == "1") selected @endif>U toku</option>
         <option value="2" @if(old('status', $status) == "2") selected @endif>Završeno</option>

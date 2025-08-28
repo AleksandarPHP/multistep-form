@@ -4,7 +4,7 @@
 <!-- Breadcrumbs-->
 <ol class="breadcrumb">
     <li class="breadcrumb-item">
-        <a href="{{ url('cms') }}">POČETNA</a>
+        <a href="{{ url('cms') }}">HOME</a>
     </li>
     <li class="breadcrumb-item active">{{$album->title}}</li>
 </ol>

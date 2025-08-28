@@ -1,7 +1,7 @@
 <header class="row app_header">
   <div class="col-md-5">
     <a href="{{url('/')}}" target="_blank">
-      <h3 style="font-size: 32px; color: #0b3663;">Montera Termag</h3>
+      <h3 style="font-size: 32px; color: #0b3663;">Konfigurator</h3>
     </a>
   </div>
   <div class="col-md-5 text-right">

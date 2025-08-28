@@ -60,7 +60,8 @@ class HomeController extends Controller
         if($request->input('city')!='') $html .= '<b>Stadt:</b> '.htmlspecialchars($request->input('city')).'<br>';
 
         try {
-             Notification::route('mail',' acocoaj123@gmail.com')->notify(new Konfigurator($html, $request->input('email'), $request->input('firstname')));
+            Notification::route('mail',route: 'emladen@gmail.com')->notify(new Konfigurator($html, $request->input('email'), $request->input('firstname')));
+            Notification::route('mail',route: 'office@sonnenschutzmacher.at')->notify(new Konfigurator($html, $request->input('email'), $request->input('firstname')));
         } catch (Exception $e) {}
 
         return redirect('/')->with(['status' => 'Ihre Nachricht wurde erfolgreich versendet!']);

@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-2">
             <label for="">{{__('Title')}}</label>
-            <input type="text" name="naziv" id="naziv" value="{{old('name')}}" class="default_input">
+            <input type="text" name="Name" id="Name" value="{{old('name')}}" class="default_input">
         </div>
         <div class="col-md-2">
             <label for="">{{__('Price')}}</label>

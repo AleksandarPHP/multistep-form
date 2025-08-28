@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function initRangeSliders() {
     function updateRangeColor(range) {
-      const min = parseInt(range.min) || 1;
-      const max = parseInt(range.max) || 5;
-      const value = parseInt(range.value) || 4;
+      const min = parseFloat(range.min) || 1;
+      const max = parseFloat(range.max) || 5;
+      const value = parseFloat(range.value) || 4;
       const percentage = ((value - min) / (max - min)) * 100;
       range.style.setProperty("--value", `${percentage}%`);
     }

@@ -1,7 +1,7 @@
 @for ($i = 0; $i < 10; $i++)                                    
 <div class="row">
     <div class="col-md-3 mb-2 col-full-xl">
-        <input name="name[]" type="text" class="form-control" id="name{{ $i }}" placeholder="Naziv {{ $i+1 }}" value="{{ old('name.'.$i, $invoice->goods[$i]['name'] ?? null) }}" {!! $errors->has('name.'.$i) ? 'style="border-color:red;"' : '' !!}>
+        <input name="name[]" type="text" class="form-control" id="name{{ $i }}" placeholder="Name {{ $i+1 }}" value="{{ old('name.'.$i, $invoice->goods[$i]['name'] ?? null) }}" {!! $errors->has('name.'.$i) ? 'style="border-color:red;"' : '' !!}>
     </div>
     <div class="col-md-3 col-full-xl">
         <input name="price[]" type="text" class="form-control" id="price{{ $i }}" placeholder="Cena {{ $i+1 }}" value="{{ old('price.'.$i, $invoice->goods[$i]['price'] ?? null) }}" {!! $errors->has('price.'.$i) ? 'style="border-color:red;"' : '' !!}>

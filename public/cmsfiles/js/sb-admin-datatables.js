@@ -7,18 +7,18 @@ $(document).ready(function() {
     }],
     "oLanguage": {
         "sProcessing":   "Procesiranje u toku...",
-        "sLengthMenu":   "Prikaži _MENU_ elemenata",
+        "sLengthMenu":   "Zeigen _MENU_ elemenata",
         "sZeroRecords":  "Nije pronađen nijedan rezultat",
-        "sInfo":         "Prikaz _START_ do _END_ od ukupno _TOTAL_ elemenata",
-        "sInfoEmpty":    "Prikaz 0 do 0 od ukupno 0 elemenata",
-        "sInfoFiltered": "(filtrirano od ukupno _MAX_ elemenata)",
+        "sInfo":         "Anzeige_START_ do _END_ od gesamt _TOTAL_ elemenata",
+        "sInfoEmpty":    "Anzeige0 do 0 od gesamt 0 elemenata",
+        "sInfoFiltered": "(filtrirano od gesamt _MAX_ elemenata)",
         "sInfoPostFix":  "",
-        "sSearch":       "Pretraga:",
+        "sSearch":       "Suchen:",
         "sUrl":          "",
         "oPaginate": {
-            "sFirst":    "Početna",
+            "sFirst":    "HOME",
             "sPrevious": "Prethodna",
-            "sNext":     "Sledeća",
+            "sNext":     "Nächste",
             "sLast":     "Poslednja"
         }
     }

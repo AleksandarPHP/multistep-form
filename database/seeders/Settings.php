@@ -14,7 +14,7 @@ class Settings extends Seeder
     public function run(): void
     {
         DB::table('settings')->insert([
-            'title' => 'Montera Termag',
+            'title' => 'Konfigurator',
             'description' => NULL,
             'keywords' => NULL,
             'phone' => NULL,

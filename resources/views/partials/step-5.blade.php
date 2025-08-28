@@ -429,7 +429,9 @@
                 <div class="row g-4 mt-4">
                   <p class="subtitle">Möchten Sie uns noch etwas mitteilen?</p>
                   <div class="col-lg-3 col-md-6">
-                    <textarea name="message" id="" rows="10" cols="60"></textarea>
+                    <textarea name="message" id="" rows="10" cols="60" placeholder="Möchten Sie uns noch etwas mitteilen?
+
+"></textarea>
                   </div>
                 </div>
               </div>
