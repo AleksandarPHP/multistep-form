@@ -1,4 +1,5 @@
 <div class="form-step" data-step="2">
+              <div id="card-s2" class="d-none">
                 <div class="row">
                   <div class="col-12">
                     <h2 class="title">Spezifikation</h2>
@@ -39,8 +40,9 @@
                     </div>
                   </div>  
                 </div>
+              </div>
 
-                <div id="card-s2-2">
+                <div id="card-s2-2" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -82,7 +84,7 @@
                   </div>
                 </div>
 
-                <div id="card-s2-3">
+                <div id="card-s2-3" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -154,7 +156,7 @@
                   </div>
                 </div>
 
-                <div id="card-s2-4">
+                <div id="card-s2-4" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -211,7 +213,7 @@
                   </div>
                 </div>
 
-                <div id="card-s2-5">
+                <div id="card-s2-5" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -253,7 +255,7 @@
                   </div>
                 </div>
 
-                <div id="card-s2-6">
+                <div id="card-s2-6" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -295,7 +297,7 @@
                   </div>
                 </div>
 
-                <div id="card-s2-7">
+                <div id="card-s2-7" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -337,7 +339,7 @@
                   </div>
                 </div>
                 
-                <div id="card-s2-8">
+                <div id="card-s2-8" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -379,7 +381,7 @@
                   </div>
                 </div>
 
-                <div id="card-s2-9">
+                <div id="card-s2-9" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -421,7 +423,7 @@
                   </div>
                 </div>
 
-                <div id="card-s2-10">
+                <div id="card-s2-10" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -478,7 +480,7 @@
                   </div>
                 </div>
 
-                <div id="card-s2-11">
+                <div id="card-s2-11" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -520,7 +522,7 @@
                   </div>
                 </div>
 
-                <div id="card-s2-12">
+                <div id="card-s2-12" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -562,7 +564,7 @@
                   </div>
                 </div>
                 
-                <div id="card-s2-13">
+                <div id="card-s2-13" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">
@@ -634,7 +636,7 @@
                   </div>
                 </div>
 
-                <div id="card-s2-1">
+                <div id="card-s2-1" class="d-none">
                   <div class="row">
                     <div class="col-12">
                       <p class="subtitle">

@@ -109,31 +109,37 @@ document.querySelectorAll(".form-step").forEach((step) => {
   }
 });
 
-    choiceCardsS1.forEach((card) => {
-    card.addEventListener("click", function () {
-      const parentStep = this.closest(".form-step");
+choiceCardsS1.forEach((card) => {
+  card.addEventListener("click", function () {
+    const parentStep = this.closest(".form-step");
 
-      parentStep.querySelectorAll(".card-s1").forEach((c) => {
-        c.classList.remove("selected");
-        const input = c.querySelector('input[type="radio"]');
-        if (input) input.checked = false;
-      });
-
-      this.classList.add("selected");
-      const input = this.querySelector('input[type="radio"]');
-      if (input) input.checked = true;
+    parentStep.querySelectorAll(".card-s1").forEach((c) => {
+      c.classList.remove("selected");
+      const input = c.querySelector('input[type="radio"]');
+      if (input) input.checked = false;
     });
-  });
 
-  document.querySelectorAll(".form-step").forEach((step) => {
+    this.classList.add("selected");
+    const input = this.querySelector('input[type="radio"]');
+    if (input) {
+      input.checked = true;
+      // 🔑 ručno pokrećemo change event da bi radio tvoj kod
+      input.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+  });
+});
+
+document.querySelectorAll(".form-step").forEach((step) => {
   const first1Card = step.querySelector(".card-s1");
   if (first1Card) {
     first1Card.classList.add("selected");
     const input = first1Card.querySelector('input[type="radio"]');
-    if (input) input.checked = true;
+    if (input) {
+      input.checked = true;
+      input.dispatchEvent(new Event("change", { bubbles: true }));
+    }
   }
 });
-  
 
       choiceCardsS2.forEach((card) => {
     card.addEventListener("click", function () {
@@ -823,4 +829,48 @@ document.querySelectorAll(".row").forEach((row) => {
       nextBtn.type = "submit";
     }
   }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Mapiranje: izbor iz 1. koraka -> blokovi u 2. koraku
+    const stepMapping = {
+        1: ["card-s2", "card-s2-1"],          // ako je izabran id=1
+        2: ["card-s2-2", "card-s2-1"],      // ako je izabran id=2
+        // dodaj dalje po potrebi:
+        3: ["card-s2-3", "card-s2-4", "card-s2-1"],
+        4: ["card-s2-5", "card-s2-6"],
+        5: ["card-s2-7" ],
+        6: ["card-s2-8", "card-s2-9"],
+        7: ["card-s2-10", "card-s2-11", "card-s2-12"],
+        8: ["card-s2-13"]
+
+    };
+
+    // svi blokovi u 2. koraku (pretpostavka: svi imaju id koji počinje sa card-s2)
+    const allSecondStepCards = document.querySelectorAll("[id^='card-s2']");
+    
+    // svi radio buttoni iz 1. koraka
+    const radios = document.querySelectorAll("input[name='product']");
+    console.log(radios);
+    
+
+radios.forEach(radio => {
+    radio.addEventListener("change", function () {
+        console.log("Izabrano:", this.id);
+
+        // sakrij sve kartice u 2. koraku
+        allSecondStepCards.forEach(card => card.classList.add("d-none"));
+
+        // uzmi mapirane blokove na osnovu id-a
+        const selectedId = this.id;  
+        const toShow = stepMapping[selectedId] || [];
+
+        // prikaži samo potrebne
+        toShow.forEach(blockId => {
+            const block = document.getElementById(blockId);
+            if (block) block.classList.remove("d-none");
+        });
+    });
+});
 });

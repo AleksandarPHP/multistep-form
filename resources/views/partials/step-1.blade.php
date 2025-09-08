@@ -1,4 +1,4 @@
-<div class="form-step" data-step="1">
+<div class="form-step" data-step="1" id="step-1">
                 <div class="row">
                   <div class="col-12">
                     <h2 class="title">Produktauswahl</h2>
@@ -20,7 +20,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Kassetten-Markise</p>
-                        <input class="d-none" type="radio" name="product" id="" value="Kassetten-Markise">
+                        <input class="d-none" type="radio" name="product" id="1" value="Kassetten-Markise">
                       </div>
                     </div>
                   </div>
@@ -35,7 +35,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Gelenkarm-Markise</p>
-                        <input class="d-none" type="radio" name="product" id="" value="Gelenkarm-Markise">
+                        <input class="d-none" type="radio" name="product" id="2" value="Gelenkarm-Markise">
                       </div>
                     </div>
                   </div>
@@ -50,7 +50,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Pergola-Markise</p>
-                        <input class="d-none" type="radio" name="product" id="" value="Pergola-Markise">
+                        <input class="d-none" type="radio" name="product" id="3" value="Pergola-Markise">
                       </div>
                     </div>
                   </div>
@@ -65,7 +65,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Wintergarten-Markise</p>
-                        <input class="d-none" type="radio" name="product" id="" value="Wintergarten-Markise">
+                        <input class="d-none" type="radio" name="product" id="4" value="Wintergarten-Markise">
                       </div>
                     </div>
                   </div>
@@ -82,7 +82,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Seitenmarkise</p>
-                        <input class="d-none" type="radio" name="product" id="" value="Seitenmarkise">
+                        <input class="d-none" type="radio" name="product" id="5" value="Seitenmarkise">
                       </div>
                     </div>
                   </div>
@@ -97,7 +97,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Sonnenschirm</p>
-                        <input class="d-none" type="radio" name="product" id="" value="Sonnenschirm">
+                        <input class="d-none" type="radio" name="product" id="6" value="Sonnenschirm">
                       </div>
                     </div>
                   </div>
@@ -112,7 +112,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Sonnensegel</p>
-                        <input class="d-none" type="radio" name="product" id="" value="Sonnensegel">
+                        <input class="d-none" type="radio" name="product" id="7" value="Sonnensegel">
                       </div>
                     </div>
                   </div>
@@ -127,7 +127,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Dachsysteme</p>
-                        <input class="d-none" type="radio" name="product" id="" value="Dachsysteme">
+                        <input class="d-none" type="radio" name="product" id="8" value="Dachsysteme">
                       </div>
                     </div>
                   </div>
