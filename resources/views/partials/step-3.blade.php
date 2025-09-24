@@ -19,7 +19,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Mit Volant-Rollo</p>
-                        <input class="d-none" type="radio" name="valance_blind" id="" value="Mit Volant-Rollo">
+                        <input class="d-none"type="radio" data-price="225.23" name="valance_blind" id="" value="Mit Volant-Rollo">
                       </div>
                     </div>
                   </div>
@@ -34,7 +34,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Ohne Volant-Rollo</p>
-                        <input class="d-none" type="radio" name="valance_blind" id="" value="Ohne Volant-Rollo">
+                        <input class="d-none"type="radio" data-price="225.23" name="valance_blind" id="" value="Ohne Volant-Rollo">
                       </div>
                     </div>
                   </div>
@@ -59,7 +59,7 @@
                       </div>
                       <div class="choice-text">
                         <p>LED-Beleuchtung</p>
-                        <input class="d-none" type="radio" name="equipment" id="" value="LED-Beleuchtung">
+                        <input class="d-none"type="radio" data-price="225.23" name="equipment" id="" value="LED-Beleuchtung" data-price="223.23">
                       </div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Heizstrahler</p>
-                        <input class="d-none" type="radio" name="equipment" id="" value="Heizstrahler">
+                        <input class="d-none"type="radio" data-price="225.23" name="equipment" id="" value="Heizstrahler" data-price="244.23">
                       </div>
                     </div>
                   </div>
@@ -89,7 +89,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Windsensor</p>
-                        <input class="d-none" type="radio" name="equipment" id="" value="Windsensor">
+                        <input class="d-none"type="radio" data-price="225.23" name="equipment" id="" value="Windsensor">
                       </div>
                     </div>
                   </div>
@@ -114,7 +114,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Handsender</p>
-                        <input class="d-none" type="radio" name="control" id="" value="Windsensor">
+                        <input class="d-none"type="radio" data-price="225.23" name="control" id="" value="Windsensor">
                       </div>
                     </div>
                   </div>
@@ -129,29 +129,10 @@
                       </div>
                       <div class="choice-text">
                         <p>Smartphone</p>
-                        <input class="d-none" type="radio" name="control" id="" value="Windsensor">
+                        <input class="d-none"type="radio" data-price="225.23" name="control" id="" value="Windsensor">
                       </div>
                     </div>
                   </div>
                 </div>
-
-                {{-- <div class="row mt-5">
-                  <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="price-info-box">
-                      <h3 class="price-info-title">
-                        Unverbindliche Preisinformation inkl. Produkt, Planung,
-                        Montage und MwSt.
-                      </h3>
-                      <div class="price-range">
-                        <span>3.700 €</span>
-                        <span class="separator">-</span>
-                        <span>4.500 €</span>
-                      </div>
-                      <p class="price-info-note">
-                        Ein exakter Preis kann erst nach Aufmaß und Bemusterung
-                        ermittelt werden.
-                      </p>
-                    </div>
-                  </div>
-                </div> --}}
+                @include('partials.price-info')
               </div>

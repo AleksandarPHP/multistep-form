@@ -70,7 +70,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Ich suche Beratung</p>
-                        <input class="d-none" type="radio" name="advisor" value="Ich suche Beratung">
+                        <input class="d-none"type="radio" name="advisor" value="Ich suche Beratung">
                       </div>
                     </div>
                   </div>

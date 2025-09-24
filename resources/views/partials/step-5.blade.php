@@ -53,7 +53,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Gelb</p>
-                                <input class="d-none" type="radio" name="design_color" value="Gelb">
+                                <input class="d-none"type="radio" data-price="225.23" name="design_color" value="Gelb">
                               </div>
                             </div>
                           </div>
@@ -68,7 +68,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Grün</p>
-                                <input class="d-none" type="radio" name="design_color" value="Grün">
+                                <input class="d-none"type="radio" data-price="225.23" name="design_color" value="Grün">
                               </div>
                             </div>
                           </div>
@@ -83,7 +83,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Dunkelrot</p>
-                                <input class="d-none" type="radio" name="design_color" value="Dunkelrot">
+                                <input class="d-none"type="radio" data-price="225.23" name="design_color" value="Dunkelrot">
                               </div>
                             </div>
                           </div>
@@ -98,7 +98,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Dunkelblau</p>
-                                <input class="d-none" type="radio" name="design_color" value="Dunkelblau">
+                                <input class="d-none"type="radio" data-price="225.23" name="design_color" value="Dunkelblau">
                               </div>
                             </div>
                           </div>
@@ -115,7 +115,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Hellgrau</p>
-                                <input class="d-none" type="radio" name="design_color" value="Hellgrau">
+                                <input class="d-none"type="radio" data-price="225.23" name="design_color" value="Hellgrau">
                               </div>
                             </div>
                           </div>
@@ -130,7 +130,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Beige</p>
-                                <input class="d-none" type="radio" name="design_color" value="Beige">
+                                <input class="d-none"type="radio" data-price="225.23" name="design_color" value="Beige">
                               </div>
                             </div>
                           </div>
@@ -145,7 +145,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Dunkelgrau</p>
-                                <input class="d-none" type="radio" name="design_color" value="Dunkelgrau">
+                                <input class="d-none"type="radio" data-price="225.23" name="design_color" value="Dunkelgrau">
                               </div>
                             </div>
                           </div>
@@ -160,7 +160,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Individuelle Beratung vor Ort</p>
-                                <input class="d-none" type="radio" name="design_color" value="Individuelle Beratung vor Ort">
+                                <input class="d-none"type="radio" data-price="225.23" name="design_color" value="Individuelle Beratung vor Ort">
                               </div>
                             </div>
                           </div>
@@ -185,7 +185,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Verkehrsweiß</p>
-                                <input class="d-none" type="radio" name="fabric_color" value="Verkehrsweiß">
+                                <input class="d-none"type="radio" data-price="225.23" name="fabric_color" value="Verkehrsweiß">
                               </div>
                             </div>
                           </div>
@@ -200,7 +200,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Weißaluminium</p>
-                                <input class="d-none" type="radio" name="fabric_color" value="Weißaluminium">
+                                <input class="d-none"type="radio" data-price="225.23" name="fabric_color" value="Weißaluminium">
                               </div>
                             </div>
                           </div>
@@ -215,7 +215,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Graualuminium</p>
-                                <input class="d-none" type="radio" name="fabric_color" value="Graualuminium">
+                                <input class="d-none"type="radio" data-price="225.23" name="fabric_color" value="Graualuminium">
                               </div>
                             </div>
                           </div>
@@ -230,7 +230,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Anthrazit Eisenglimmer</p>
-                                <input class="d-none" type="radio" name="fabric_color" value="Anthrazit Eisenglimmer">
+                                <input class="d-none"type="radio" data-price="225.23" name="fabric_color" value="Anthrazit Eisenglimmer">
                               </div>
                             </div>
                           </div>
@@ -247,7 +247,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Hellelfenbein</p>
-                                <input class="d-none" type="radio" name="fabric_color" value="Hellelfenbein">
+                                <input class="d-none"type="radio" data-price="225.23" name="fabric_color" value="Hellelfenbein">
                               </div>
                             </div>
                           </div>
@@ -262,7 +262,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Sepiabraun</p>
-                                <input class="d-none" type="radio" name="fabric_color" value="Sepiabraun">
+                                <input class="d-none"type="radio" data-price="225.23" name="fabric_color" value="Sepiabraun">
                               </div>
                             </div>
                           </div>
@@ -277,7 +277,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Anthrazitgrau</p>
-                                <input class="d-none" type="radio" name="fabric_color" value="Anthrazitgrau">
+                                <input class="d-none"type="radio" data-price="225.23" name="fabric_color" value="Anthrazitgrau">
                               </div>
                             </div>
                           </div>
@@ -292,7 +292,7 @@
                               </div>
                               <div class="choice-text">
                                 <p>Individuelle Beratung vor Ort</p>
-                                <input class="d-none" type="radio" name="fabric_color" value="Individuelle Beratung vor Ort">
+                                <input class="d-none"type="radio" data-price="225.23" name="fabric_color" value="Individuelle Beratung vor Ort">
                               </div>
                             </div>
                           </div>
@@ -314,7 +314,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Verkehrsweiß</p>
-                        <input class="d-none" type="radio" name="frame_color" value="Verkehrsweiß">
+                        <input class="d-none"type="radio" data-price="225.23" name="frame_color" value="Verkehrsweiß">
                       </div>
                     </div>
                   </div>
@@ -329,7 +329,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Weißaluminium</p>
-                        <input class="d-none" type="radio" name="frame_color" value="Weißaluminium">
+                        <input class="d-none"type="radio" data-price="225.23" name="frame_color" value="Weißaluminium">
                       </div>
                     </div>
                   </div>
@@ -344,7 +344,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Graualuminium</p>
-                        <input class="d-none" type="radio" name="frame_color" value="Graualuminium">
+                        <input class="d-none"type="radio" data-price="225.23" name="frame_color" value="Graualuminium">
                       </div>
                     </div>
                   </div>
@@ -359,7 +359,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Anthrazit Eisenglimmer</p>
-                        <input class="d-none" type="radio" name="frame_color" value="Anthrazit Eisenglimmer">
+                        <input class="d-none"type="radio" data-price="225.23" name="frame_color" value="Anthrazit Eisenglimmer">
                       </div>
                     </div>
                   </div>
@@ -376,7 +376,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Hellelfenbein</p>
-                        <input class="d-none" type="radio" name="frame_color" value="Hellelfenbein">
+                        <input class="d-none"type="radio" data-price="225.23" name="frame_color" value="Hellelfenbein">
                       </div>
                     </div>
                   </div>
@@ -391,7 +391,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Sepiabraun</p>
-                        <input class="d-none" type="radio" name="frame_color" value="Sepiabraun">
+                        <input class="d-none"type="radio" data-price="225.23" name="frame_color" value="Sepiabraun">
                       </div>
                     </div>
                   </div>
@@ -406,7 +406,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Anthrazitgrau</p>
-                        <input class="d-none" type="radio" name="frame_color" value="Anthrazitgrau">
+                        <input class="d-none"type="radio" data-price="225.23" name="frame_color" value="Anthrazitgrau">
                       </div>
                     </div>
                   </div>
@@ -421,7 +421,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Individuelle Beratung vor Ort</p>
-                        <input class="d-none" type="radio" name="frame_color" value="Individuelle Beratung vor Ort">
+                        <input class="d-none"type="radio" data-price="225.23" name="frame_color" value="Individuelle Beratung vor Ort">
                       </div>
                     </div>
                   </div>
@@ -429,9 +429,8 @@
                 <div class="row g-4 mt-4">
                   <p class="subtitle">Möchten Sie uns noch etwas mitteilen?</p>
                   <div class="col-lg-3 col-md-6">
-                    <textarea name="message" id="" rows="10" cols="60" placeholder="Möchten Sie uns noch etwas mitteilen?
-
-"></textarea>
+                    <textarea name="message" id="" rows="10" cols="60" placeholder="Möchten Sie uns noch etwas mitteilen?"></textarea>
                   </div>
                 </div>
+                @include('partials.price-info')
               </div>

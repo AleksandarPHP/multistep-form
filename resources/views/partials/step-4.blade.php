@@ -75,4 +75,5 @@
                     </div>
                   </div>
                 </div>
+                @include('partials.price-info')
               </div>
