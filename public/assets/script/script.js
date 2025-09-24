@@ -130,6 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
           
           if (input) {
             input.checked = true;
+            // console.log(input.dataset.price);
+            totalPtice(input.dataset.price);
             if (cardType.specialBehavior) {
               cardType.specialBehavior(this, input);
             }
@@ -154,6 +156,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  function totalPtice(price){
+    console.log(price);
+    
+  }
   function initFormSelectionButtons() {
     formSelectionBtns.forEach(btn => {
       btn.addEventListener("click", function (e) {
