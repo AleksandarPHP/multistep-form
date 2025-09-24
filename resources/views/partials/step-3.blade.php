@@ -19,7 +19,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Mit Volant-Rollo</p>
-                        <input class="d-none"type="radio" data-price="225.23" name="valance_blind" id="" value="Mit Volant-Rollo">
+                        <input class="d-none"type="radio" data-price="33.23" name="valance_blind" id="" value="Mit Volant-Rollo">
                       </div>
                     </div>
                   </div>
@@ -34,7 +34,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Ohne Volant-Rollo</p>
-                        <input class="d-none"type="radio" data-price="225.23" name="valance_blind" id="" value="Ohne Volant-Rollo">
+                        <input class="d-none"type="radio" data-price="45.23" name="valance_blind" id="" value="Ohne Volant-Rollo">
                       </div>
                     </div>
                   </div>
@@ -59,7 +59,7 @@
                       </div>
                       <div class="choice-text">
                         <p>LED-Beleuchtung</p>
-                        <input class="d-none"type="radio" data-price="225.23" name="equipment" id="" value="LED-Beleuchtung" data-price="223.23">
+                        <input class="d-none"type="radio" data-price="64.23" name="equipment" id="" value="LED-Beleuchtung" data-price="223.23">
                       </div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Heizstrahler</p>
-                        <input class="d-none"type="radio" data-price="225.23" name="equipment" id="" value="Heizstrahler" data-price="244.23">
+                        <input class="d-none"type="radio" data-price="57.23" name="equipment" id="" value="Heizstrahler" data-price="244.23">
                       </div>
                     </div>
                   </div>
@@ -89,7 +89,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Windsensor</p>
-                        <input class="d-none"type="radio" data-price="225.23" name="equipment" id="" value="Windsensor">
+                        <input class="d-none"type="radio" data-price="77.23" name="equipment" id="" value="Windsensor">
                       </div>
                     </div>
                   </div>
@@ -114,7 +114,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Handsender</p>
-                        <input class="d-none"type="radio" data-price="225.23" name="control" id="" value="Windsensor">
+                        <input class="d-none"type="radio" data-price="84.23" name="control" id="" value="Windsensor">
                       </div>
                     </div>
                   </div>
@@ -129,10 +129,9 @@
                       </div>
                       <div class="choice-text">
                         <p>Smartphone</p>
-                        <input class="d-none"type="radio" data-price="225.23" name="control" id="" value="Windsensor">
+                        <input class="d-none"type="radio" data-price="97.23" name="control" id="" value="Windsensor">
                       </div>
                     </div>
                   </div>
                 </div>
-                @include('partials.price-info')
               </div>

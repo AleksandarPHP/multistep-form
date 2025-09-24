@@ -6,9 +6,9 @@
                         Montage und MwSt.
                       </h3>
                       <div class="price-range">
-                        <span>3.700 €</span>
+                        <span id="price-value-min">0.00 €</span>
                         <span class="separator">-</span>
-                        <span>4.500 €</span>
+                        <span id="price-value-max">0.00 €</span>
                       </div>
                       <p class="price-info-note">
                         Ein exakter Preis kann erst nach Aufmaß und Bemusterung

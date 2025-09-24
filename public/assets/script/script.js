@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  let total = 0; // globalna varijabla
 
   function initChoiceCards() {
     // Define all card types with their special behaviors
@@ -122,7 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
           sameTypeCards.forEach(c => {
             c.classList.remove("selected");
             const input = c.querySelector('input[type="radio"]');
-            if (input) input.checked = false;
+            if (input && input.checked) {
+              oldPrice = +input.dataset.price;
+              input.checked = false;
+            }
           });
 
           this.classList.add("selected");
@@ -130,8 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
           
           if (input) {
             input.checked = true;
-            // console.log(input.dataset.price);
-            totalPtice(input.dataset.price);
+            let cardPrice = +input.dataset.price;
+            console.log(cardPrice);
+            
+            totalPtice(cardPrice, oldPrice);
             if (cardType.specialBehavior) {
               cardType.specialBehavior(this, input);
             }
@@ -147,6 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const input = firstCard.querySelector('input[type="radio"]');
           if (input) {
             input.checked = true;
+            
             if (cardType.specialBehavior) {
               cardType.specialBehavior(firstCard, input);
             }
@@ -156,10 +163,51 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function totalPtice(price){
-    console.log(price);
+  function totalPtice(price, oldPrice) {
+    console.log('total', total);
     
+    if (total == 0) {
+      oldPrice = 0;
+    }
+    console.log('old', oldPrice);
+    
+    // sabira sve pozive    
+    if(!isNaN(price)){
+      total += price;
+    }
+
+    if(!isNaN(oldPrice)){
+      total = total - oldPrice;
+    }
+    console.log(total);
+
+    let minPrice, maxPrice = 0;
+
+    if (total !== 0) {
+      minPrice = total - 500;
+      maxPrice = total + 800;
+    }
+
+    // formatiraj kao EUR
+    let formattedMin = minPrice.toLocaleString("de-DE", {
+      style: "currency",
+      currency: "EUR",
+      minimumFractionDigits: 0
+    });
+
+    let formattedMax = maxPrice.toLocaleString("de-DE", {
+      style: "currency",
+      currency: "EUR",
+      minimumFractionDigits: 0
+    });
+
+    // upiši u span
+    document.getElementById("price-value-min").innerText = formattedMin;
+    document.getElementById("price-value-max").innerText = formattedMax;
+
+    console.log("Ukupno:", total);
   }
+
   function initFormSelectionButtons() {
     formSelectionBtns.forEach(btn => {
       btn.addEventListener("click", function (e) {

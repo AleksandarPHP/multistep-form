@@ -20,7 +20,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Rund</p>
-                        <input class="d-none"type="radio" data-price="225.23" name="design" id="" value="Rund">
+                        <input class="d-none"type="radio" data-price="1225.23" name="design" id="" value="Rund">
                       </div>
                     </div>
                   </div>
@@ -35,7 +35,7 @@
                       </div>
                       <div class="choice-text">
                         <p>Eckig</p>
-                        <input class="d-none"type="radio" data-price="225.23" name="design" id="" value="Eckig">
+                        <input class="d-none"type="radio" data-price="25.23" name="design" id="" value="Eckig">
                       </div>
                     </div>
                   </div>  
@@ -62,7 +62,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Offen</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="articulated_arm_awning" id="" value="Offen">
+                          <input class="d-none"type="radio" data-price="35.23" name="articulated_arm_awning" id="" value="Offen">
                         </div>
                       </div>
                     </div>
@@ -77,7 +77,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Halbgeschlossen</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="articulated_arm_awning" id="" value="Halbgeschlossen">
+                          <input class="d-none"type="radio" data-price="95.23" name="articulated_arm_awning" id="" value="Halbgeschlossen">
                         </div>
                       </div>
                     </div>  
@@ -104,7 +104,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Sonnenschutz</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="important_to_you" id="" value="Sonnenschutz">
+                          <input class="d-none"type="radio" data-price="32.23" name="important_to_you" id="" value="Sonnenschutz">
                         </div>
                       </div>
                     </div>
@@ -119,7 +119,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Sichtschutz</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="important_to_you" id="" value="Sichtschutz">
+                          <input class="d-none"type="radio" data-price="23" name="important_to_you" id="" value="Sichtschutz">
                         </div>
                       </div>
                     </div>  
@@ -134,7 +134,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Gelegentlicher Regenschutz</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="important_to_you" id="" value="Gelegentlicher Regenschutz">
+                          <input class="d-none"type="radio" data-price="76.23" name="important_to_you" id="" value="Gelegentlicher Regenschutz">
                         </div>
                       </div>
                     </div>  
@@ -149,7 +149,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Dauerhafter Regenschutz</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="important_to_you" id="" value="Dauerhafter Regenschutz">
+                          <input class="d-none"type="radio" data-price="45.23" name="important_to_you" id="" value="Dauerhafter Regenschutz">
                         </div>
                       </div>
                     </div>  
@@ -176,7 +176,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Gerollt (rund)</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="pergola_awning_design" id="" value="Gerollt (rund)">
+                          <input class="d-none"type="radio" data-price="31.23" name="pergola_awning_design" id="" value="Gerollt (rund)">
                         </div>
                       </div>
                     </div>
@@ -191,7 +191,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Gerollt (kubisch)</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="pergola_awning_design" id="" value="Gerollt (kubisch)">
+                          <input class="d-none"type="radio" data-price="86.23" name="pergola_awning_design" id="" value="Gerollt (kubisch)">
                         </div>
                       </div>
                     </div>  
@@ -206,7 +206,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Gerafft</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="pergola_awning_design" id="" value="Gerafft">
+                          <input class="d-none"type="radio" data-price="59.23" name="pergola_awning_design" id="" value="Gerafft">
                         </div>
                       </div>
                     </div>  
@@ -233,7 +233,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Unter dem Dach</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="indoor_or_outdoor" id="" value="Unter dem Dach">
+                          <input class="d-none"type="radio" data-price="66.23" name="indoor_or_outdoor" id="" value="Unter dem Dach">
                         </div>
                       </div>
                     </div>
@@ -248,7 +248,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Auf dem Dach</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="indoor_or_outdoor" id="" value="Auf dem Dach">
+                          <input class="d-none"type="radio" data-price="69.23" name="indoor_or_outdoor" id="" value="Auf dem Dach">
                         </div>
                       </div>
                     </div>  
@@ -275,7 +275,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Ja</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="strong_winds" id="" value="Ja">
+                          <input class="d-none"type="radio" data-price="17.23" name="strong_winds" id="" value="Ja">
                         </div>
                       </div>
                     </div>
@@ -290,7 +290,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Nein</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="strong_winds" id="" value="Nein">
+                          <input class="d-none"type="radio" data-price="39.23" name="strong_winds" id="" value="Nein">
                         </div>
                       </div>
                     </div>  
@@ -317,7 +317,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Gerade</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="side_awning_design" id="" value="Gerade">
+                          <input class="d-none"type="radio" data-price="57.23" name="side_awning_design" id="" value="Gerade">
                         </div>
                       </div>
                     </div>
@@ -332,7 +332,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Schräg</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="side_awning_design" id="" value="Schräg">
+                          <input class="d-none"type="radio" data-price="59.23" name="side_awning_design" id="" value="Schräg">
                         </div>
                       </div>
                     </div>  
@@ -359,7 +359,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Rund</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="parasol_shape" id="" value="Rund">
+                          <input class="d-none"type="radio" data-price="51.23" name="parasol_shape" id="" value="Rund">
                         </div>
                       </div>
                     </div>
@@ -374,7 +374,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Eckig</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="parasol_shape" id="" value="Eckig">
+                          <input class="d-none"type="radio" data-price="7.23" name="parasol_shape" id="" value="Eckig">
                         </div>
                       </div>
                     </div>  
@@ -401,7 +401,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Mittelmast</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="mast_design" id="" value="Mittelmast">
+                          <input class="d-none"type="radio" data-price="99.23" name="mast_design" id="" value="Mittelmast">
                         </div>
                       </div>
                     </div>
@@ -416,7 +416,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Seitenmast</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="mast_design" id="" value="Seitenmast">
+                          <input class="d-none"type="radio" data-price="77.23" name="mast_design" id="" value="Seitenmast">
                         </div>
                       </div>
                     </div>  
@@ -443,7 +443,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Wandanbindung</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="type_of_connection" id="" value="Wandanbindung">
+                          <input class="d-none"type="radio" data-price="66.23" name="type_of_connection" id="" value="Wandanbindung">
                         </div>
                       </div>
                     </div>
@@ -458,7 +458,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Pfosten</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="type_of_connection" id="" value="Pfosten">
+                          <input class="d-none"type="radio" data-price="90.23" name="type_of_connection" id="" value="Pfosten">
                         </div>
                       </div>
                     </div>  
@@ -473,7 +473,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Gemischt</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="type_of_connection" id="" value="Gemischt">
+                          <input class="d-none"type="radio" data-price="91.23" name="type_of_connection" id="" value="Gemischt">
                         </div>
                       </div>
                     </div>  
@@ -500,7 +500,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Einseitig</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="extension_of_the_sun_sail" id="" value="Einseitig">
+                          <input class="d-none"type="radio" data-price="92.22" name="extension_of_the_sun_sail" id="" value="Einseitig">
                         </div>
                       </div>
                     </div>
@@ -515,7 +515,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Zweiseitig</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="extension_of_the_sun_sail" id="" value="Zweiseitig">
+                          <input class="d-none"type="radio" data-price="12" name="extension_of_the_sun_sail" id="" value="Zweiseitig">
                         </div>
                       </div>
                     </div>  
@@ -542,7 +542,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Ja</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="height_adjustment" id="" value="Ja">
+                          <input class="d-none"type="radio" data-price="225.21" name="height_adjustment" id="" value="Ja">
                         </div>
                       </div>
                     </div>
@@ -557,7 +557,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Nein</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="height_adjustment" id="" value="Nein">
+                          <input class="d-none"type="radio" data-price="225.55" name="height_adjustment" id="" value="Nein">
                         </div>
                       </div>
                     </div>  
@@ -584,7 +584,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Ausfahrbare Markise</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="type_of_roofing" id="" value="Ausfahrbare Markise">
+                          <input class="d-none"type="radio" data-price="225.40" name="type_of_roofing" id="" value="Ausfahrbare Markise">
                         </div>
                       </div>
                     </div>
@@ -599,7 +599,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Festverglasung</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="type_of_roofing" id="" value="Festverglasung">
+                          <input class="d-none"type="radio" data-price="225.56" name="type_of_roofing" id="" value="Festverglasung">
                         </div>
                       </div>
                     </div>  
@@ -614,7 +614,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Drehbare Lamellen</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="type_of_roofing" id="" value="Drehbare Lamellen">
+                          <input class="d-none"type="radio" data-price="225.77" name="type_of_roofing" id="" value="Drehbare Lamellen">
                         </div>
                       </div>
                     </div>  
@@ -629,7 +629,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Ausfahr- und Drehbare Lamellen</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="type_of_roofing" id="" value="Drehbare Lamellen">
+                          <input class="d-none"type="radio" data-price="225.85" name="type_of_roofing" id="" value="Drehbare Lamellen">
                         </div>
                       </div>
                     </div>  
@@ -656,7 +656,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Wandmontage</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="kind_instalation" id="" value="Wandmontage">
+                          <input class="d-none"type="radio" data-price="35.55" name="kind_instalation" id="" value="Wandmontage">
                         </div>
                       </div>
                     </div>
@@ -671,7 +671,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Deckenmontage</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="kind_instalation" id="" value="Deckenmontage">
+                          <input class="d-none"type="radio" data-price="65.88" name="kind_instalation" id="" value="Deckenmontage">
                         </div>
                       </div>
                     </div>  
@@ -686,7 +686,7 @@
                         </div>
                         <div class="choice-text">
                           <p>Dachsparrenmontage</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="kind_instalation" id="" value="Dachsparrenmontage">
+                          <input class="d-none"type="radio" data-price="86.33" name="kind_instalation" id="" value="Dachsparrenmontage">
                         </div>
                       </div>
                     </div>  
@@ -701,30 +701,10 @@
                         </div>
                         <div class="choice-text">
                           <p>Keine Präferenz</p>
-                          <input class="d-none"type="radio" data-price="225.23" name="kind_instalation" id="" value="Keine Präferenz">
+                          <input class="d-none"type="radio" data-price="38.86" name="kind_instalation" id="" value="Keine Präferenz">
                         </div>
                       </div>
                     </div>  
-                  </div>
-                </div>
-
-                <div class="row mt-5">
-                  <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="price-info-box">
-                      <h3 class="price-info-title">
-                        Unverbindliche Preisinformation inkl. Produkt, Planung,
-                        Montage und MwSt.
-                      </h3>
-                      <div class="price-range">
-                        <span>3.700 €</span>
-                        <span class="separator">-</span>
-                        <span>4.500 €</span>
-                      </div>
-                      <p class="price-info-note">
-                        Ein exakter Preis kann erst nach Aufmaß und Bemusterung
-                        ermittelt werden.
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
