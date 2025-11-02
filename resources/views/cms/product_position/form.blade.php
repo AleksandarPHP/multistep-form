@@ -31,6 +31,13 @@
                 </div>
                 <div class="col-md-12"><hr></div>
                 <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input name="price" type="number" class="form-control" id="price" placeholder="Name" value="{{ old('price', $item->price) }}" {!! $errors->has('price') ? 'style="border-color:red;"' : '' !!}>
+                    </div>
+                </div>
+                <div class="col-md-12"><hr></div>
+                <div class="col-md-12">
                     <label class="form-check-label" for="flexSwitchCheckChecked">Floor?</label>
                     <div class="form-check form-switch">
                         <input name="floor" value="1" class="form-check-input" style="padding-left: 35px; padding-top:20px;" type="checkbox" role="switch" id="flexSwitchCheckChecked" @checked(old('floor', $item->floor))>

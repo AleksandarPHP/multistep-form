@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Helpers;
+use App\Models\Product;
+use App\Models\ProductPosition;
 use Intervention\Image\ImageManager;
 use Intervention\Image\Drivers\Gd\Driver;
 use Illuminate\Support\Str;
@@ -180,6 +182,18 @@ class Helper {
         // return Cache::rememberForever('slider-'.$id, function() use ($id) {
             return Slider::find($id);
         // });
+    }
+
+    public static function produkte()
+    {
+        $products = Product::where('is_active', 1)->orderBy('order', 'ASC')->get();
+        return $products;    
+    }
+    
+    public static function produktePosition()
+    {
+        $products = ProductPosition::where('is_active', 1)->orderBy('order', 'ASC')->get();
+        return $products;    
     }
 
     public static function url($url='')

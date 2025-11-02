@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('floors', function (Blueprint $table) {
-            $table->id();
-            $table->json('title')->nullable();
-            $table->text('image')->nullable();
-            $table->timestamps();
+        Schema::table('products', function (Blueprint $table) {
+            $table->integer('price');
+        });
+
+        Schema::table('product_positions', function (Blueprint $table) {
+            $table->integer('price');
         });
     }
 
@@ -24,6 +25,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('floors');
+        Schema::table('products', function (Blueprint $table) {
+            //
+        });
     }
 };

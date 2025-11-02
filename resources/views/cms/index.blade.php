@@ -23,6 +23,7 @@
         $moduli = array(
           array('cms/products', 'Produkte', 'cubes'),
           array('cms/products-position', 'Produkte position', 'building'),
+          array('cms/options', 'Optionen', 'cogs'),
           array('cms/settings/1/edit', 'Settings', 'cog'),
           array('cms/users', 'Benutzer', 'users'),
 

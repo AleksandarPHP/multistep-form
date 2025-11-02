@@ -4,27 +4,26 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use App\Models\Apartment;
+use App\Models\Option;
 use App\Notifications\Konfigurator;
 use App\Models\Floor;
 use Exception;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
+use Log;
 use Notification;
 
 class HomeController extends Controller
 {
-    public function gallery(){
-        $albums = Album::where('is_active', 1)->get();
+    public function showOptions(Request $request)
+    {
 
-        return view('galerija', ['albums' => $albums]);
+        $options = Option::whereRaw('JSON_CONTAINS(product_id, ?)', [json_encode($request->id)])->get();
+        // Log::info($options);
+
+        return response()->json(['options' => view('partials.items_list', ['options' => $options])->render()], 200);
+
     }
-
-    public function floors(Request $request, $id){
-        $floors = Floor::findOrFail($id);
-
-        return view('tehnicki-prikaz', ['floors' => $floors]);
-    }
-
     public function apartmant(Request $request, $id){
         $apartmant = Apartment::findOrFail($id);
         $floor = Floor::select('id', 'title')->get();

@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('albums', function (Blueprint $table) {
-            $table->integer('type');
-            $table->boolean('is_active')->default(true);
+        Schema::table('option_items', function (Blueprint $table) {
+            $table->json('option_id')->nullable()->change();
         });
     }
 
@@ -22,8 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('albums', function (Blueprint $table) {
-            //
+        Schema::table('option_items', function (Blueprint $table) {
+            $table->unsignedBigInteger('option_id')->nullable();
         });
     }
 };

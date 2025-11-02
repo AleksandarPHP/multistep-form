@@ -111,7 +111,7 @@ class ProductPositionController extends Controller
             'title' => ['required', 'string', 'max:191'],
             'order' => ['nullable', 'string'],
             'is_active' => ['nullable', 'string', 'in:1'],
-            'floor' => ['nullable', 'string', 'in:1'],
+            'price' => ['required', 'string'],
             'image' => ['nullable', 'mimes:jpeg,png,svg,webp', 'image', 'max:5000'],
         ]);
         
@@ -121,6 +121,7 @@ class ProductPositionController extends Controller
         
         $item->title = $request->title;
         $item->order = $request->order;
+        $item->price = $request->price;
         $item->is_active = $request->is_active ? 1 : 0;
         $item->floor = $request->floor ? 1 : 0;
         $item->image = $image;

@@ -6,13 +6,13 @@
     <li class="breadcrumb-item">
         <a href="{{ url('cms') }}">HOME</a>
     </li>
-    <li class="breadcrumb-item active">Produkte</li>
+    <li class="breadcrumb-item active">Items</li>
 </ol>
-<h1>Produkte</h1>
+<h1>Items</h1>
 <hr>
 <div class="row">
     <div class="col-md-12">
-        <form method="post" action="@if(!$editing) {{ url('cms/products') }} @else {{ url('cms/products/'.$item->id) }} @endif" enctype="multipart/form-data">
+        <form method="post" action="@if(!$editing) {{ url('cms/option-items') }} @else {{ url('cms/option-items/'.$item->id) }} @endif" enctype="multipart/form-data">
             @csrf
             @if($editing) @method('PUT') @endif
             <div class="row">
@@ -25,15 +25,25 @@
                 <div class="col-md-12"><hr></div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="title">Order</label>
-                        <input name="order" type="number" class="form-control" id="order" placeholder="Name" value="{{ old('order', $item->order) }}" {!! $errors->has('order') ? 'style="border-color:red;"' : '' !!}>
+                        <label for="order">Order</label>
+                        <input name="order" type="number" class="form-control" id="order" placeholder="Order" value="{{ old('order', $item->order) }}" {!! $errors->has('order') ? 'style="border-color:red;"' : '' !!}>
                     </div>
                 </div>
                 <div class="col-md-12"><hr></div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input name="price" type="number" class="form-control" id="price" placeholder="Name" value="{{ old('price', $item->price) }}" {!! $errors->has('price') ? 'style="border-color:red;"' : '' !!}>
+                        <input name="price" type="number" class="form-control" id="price" placeholder="Price" value="{{ old('price', $item->price) }}" {!! $errors->has('price') ? 'style="border-color:red;"' : '' !!}>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="option_id">Optionen</label>
+                        <select name="option_ids[]" multiple="multiple" class="form-control" id="option_ids" {!! $errors->has('option_ids') ? 'style="border-color:red;"' : '' !!}>
+                            @foreach ($options as $option)
+                                <option value="{{ $option->id }}" >{{$option->title}} (id:{{ $option->id }})</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="col-md-12"><hr></div>
@@ -96,7 +106,11 @@
     $('input[type="file"]').change(function() {        
         readURL(this, $(this).parent().find('img'));
     });
-
+    $(document).ready(function() {
+        $("#option_ids").select2({
+            placeholder: 'Izaberi',
+        });
+    });
     // tinymce.init({
     //     selector : "textarea",
     //     plugins : ["advlist autolink lists link charmap print preview anchor", "searchreplace visualblocks code fullscreen", "insertdatetime media table paste "],

@@ -1,5 +1,5 @@
-<div class="form-step" data-step="2">
-              <div id="card-s2" class="d-none">
+<div class="form-step" data-step="2" id="options-list">
+              <div id="card-s2" >
                 <div class="row">
                   <div class="col-12">
                     <h2 class="title">Spezifikation</h2>

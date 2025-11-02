@@ -7,132 +7,37 @@
                     </p>
                   </div>
                 </div>
-
+                @php
+                    $products = Helper::produkte();
+                @endphp
                 <div class="row g-4 mb-3">
+                  @foreach ($products as $product)
                   <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1">
-                      <div class="choice-image">
+                    <div class="choice-card card-option" data-id="{{ $product->id }}">
+                      <div class="choice-image"> 
+                        @if ($product->image)
+                        <img
+                          src="{{ asset('storage/'.$product->image)}}"
+                          alt="{{$product->title}}"
+                          class="img-fluid"
+                        />
+                        @else
                         <img
                           src="{{ asset('assets/images/produktauswahl___kassetten_markise.png')}}"
-                          alt="Kassetten-Markise"
+                          alt="{{$product->title}}"
                           class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Kassetten-Markise</p>
-                        <input class="d-none"type="radio" data-price="4325.23" name="product" id="1" value="Kassetten-Markise">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/produktauswahl___gelenkarm_markise.png')}}"
-                          alt="Kassetten-Markise"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Gelenkarm-Markise</p>
-                        <input class="d-none"type="radio" data-price="4245.23" name="product" id="2" value="Gelenkarm-Markise">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/produktauswahl___pergola_markise.png')}}"
-                          alt="Kassetten-Markise"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Pergola-Markise</p>
-                        <input class="d-none"type="radio" data-price="4525.23" name="product" id="3" value="Pergola-Markise">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/produktauswahl___wintergarten_markise.png')}}"
-                          alt="Kassetten-Markise"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Wintergarten-Markise</p>
-                        <input class="d-none"type="radio" data-price="4228.23" name="product" id="4" value="Wintergarten-Markise">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row g-4 mb-3">
-                  <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/produktauswahl___seitenmarkise.png')}}"
-                          alt="Kassetten-Markise"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Seitenmarkise</p>
-                        <input class="d-none"type="radio" data-price="4235.23" name="product" id="5" value="Seitenmarkise">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/produktauswahl___sonnenschirm.png')}}"
-                          alt="Kassetten-Markise"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Sonnenschirm</p>
-                        <input class="d-none"type="radio" data-price="4115.23" name="product" id="6" value="Sonnenschirm">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/produktauswahl___sonnensegel.png')}}"
-                          alt="Kassetten-Markise"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Sonnensegel</p>
-                        <input class="d-none"type="radio" data-price="4233.23" name="product" id="7" value="Sonnensegel">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/produktauswahl___lamaxa_lamellendach.png')}}"
-                          alt="Kassetten-Markise"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Dachsysteme</p>
-                        <input class="d-none"type="radio" data-price="4221.23" name="product" id="8" value="Dachsysteme">
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                        />    
+                        @endif
 
+                      </div>
+                      <div class="choice-text">
+                        <p>{{$product->title}}</p>
+                        <input class="d-none" type="radio" data-price="{{$product->title}}" name="product" id="{{$product->id}}" value="{{$product->title}}">
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                </div>
                 <div class="row">
                   <div class="col-12">
                     <p class="subtitle">
@@ -140,68 +45,35 @@
                     </p>
                   </div>
                 </div>
-
+                @php
+                    $items = Helper::produktePosition();
+                @endphp
                 <div class="row g-4">
+                  @foreach ($items as $item)
                   <div class="col-lg-3 col-md-6">
                     <div class="choice-card card-s1-1">
                       <div class="choice-image">
+                        @if($item->image)
                         <img
-                          src="{{ asset('assets/images/ort_produkt2___terrasse.png')}}"
-                          alt="Kassetten-Markise"
+                          src="{{ asset('storage/'.$item->image)}}"
+                          alt="{{$item->title}}"
                           class="img-fluid"
                         />
+                        @else
+                        <img
+                          src="{{ asset('assets/images/placeholder-images.jpg')}}"
+                          alt="{{$item->title}}"
+                          class="img-fluid"
+                        />    
+                        @endif
                       </div>
                       <div class="choice-text">
-                        <p>Terrasse</p>
-                        <input class="d-none"type="radio" data-price="1225.23" name="product_position" id="" value="Terrasse">
+                        <p>{{ $item->title }}</p>
+                        <input class="d-none"type="radio" data-price="{{ $item->price }}" name="product_position" id="{{ $item->id }}" value="{{$item->title}}">
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1-1">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/ort_produkt2___dachterrasse.png')}}"
-                          alt="Kassetten-Markise"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Dachterrasse</p>
-                        <input class="d-none"type="radio" data-price="1222.23" name="product_position" id="" value="Dachterrasse">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1-1">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/ort_produkt2___balkon.png')}}"
-                          alt="Kassetten-Markise"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Balkon</p>
-                        <input class="d-none"type="radio" data-price="1216.23" name="product_position" id="" value="Balkon">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1-1">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/ort_produkt2___freiflaeche.png')}}"
-                          alt="Kassetten-Markise"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Freistehend im Garten/Terrasse</p>
-                        <input class="d-none"type="radio" data-price="1233.23" name="product_position" id="" value="Freistehend im Garten/Terrasse">
-                      </div>
-                    </div>
-                  </div>
+                  @endforeach
                 </div>
 
                 <div id="floorSelection" class="row mt-5 d-none">

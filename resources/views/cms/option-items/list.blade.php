@@ -6,13 +6,14 @@
     <li class="breadcrumb-item">
         <a href="{{ url('cms') }}">HOME</a>
     </li>
-    <li class="breadcrumb-item active">Stranice</li>
+    <li class="breadcrumb-item active">Items</li>
 </ol>
-<h1>Stranice</h1>
+<h1>Items</h1>
 <hr>
+<a href="{{ url('cms/option-items/create')}}" class="btn btn-primary mb-3">Hinzufügen <i class="fa-solid fa-plus"></i></a>
 <div class="card mb-3">
     <div class="card-header">
-        <i class="fa fa-table"></i> Lista</div>
+        <i class="fa fa-table"></i> Liste</div>
     <div class="card-body">
         <div class="table-responsive">
             <table class="table table-bordered" id="dataTableSSR" width="100%" cellspacing="0">
@@ -20,7 +21,6 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Sprat</th>
                     <th>Status</th>
                     <th class="nosort text-center">Aktion</th>
                 </tr>
@@ -28,8 +28,7 @@
                 <tfoot>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    <th>Sprat</th>
+                    <th>Name</th> 
                     <th>Status</th>
                     <th class="nosort text-center">Aktion</th>
                 </tr>
@@ -81,7 +80,7 @@ $(document).ready(function() {
     "bProcessing": true,
     "serverSide": true,
     "ajax": {
-        url: "{{ url('cms/apartments/ajax') }}",
+        url: "{{ url('cms/option-items/ajax/'.$id) }}",
         type: "post",
         headers: {
             'X-CSRF-Token': "{{ csrf_token() }}"
@@ -97,15 +96,15 @@ $(document).ready(function() {
         $(row).find('td:eq(4)').addClass("text-center");
     },
     "order": [[ 0, "asc"]],
-    "rowCallback": function(row, data, index) {
-        if(data[3] == "Izdavanje") {
-            $(row).find('td:eq(3)').css('background-color', '#d2fad7');
-        } else if(data[3] == "Prodaja") {
-            $(row).find('td:eq(3)').css('background-color', '#d5d8f3');
-        } else {
-            $(row).find('td:eq(3)').css('background-color', '#f3d5d5');
-        }
-    }
+    // "rowCallback": function(row, data, index) {
+    //     if(data[3] == "Izdavanje") {
+    //         $(row).find('td:eq(3)').css('background-color', '#d2fad7');
+    //     } else if(data[3] == "Prodaja") {
+    //         $(row).find('td:eq(3)').css('background-color', '#d5d8f3');
+    //     } else {
+    //         $(row).find('td:eq(3)').css('background-color', '#f3d5d5');
+    //     }
+    // }
   });
 });
 </script>

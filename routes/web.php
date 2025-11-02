@@ -5,9 +5,8 @@ use Illuminate\Support\Facades\Route;
 $routes = [
     '/' => 'index',
 ];
-Route::get('galerija', [App\Http\Controllers\HomeController::class, 'gallery']);
-// Route::get('sprat/{id}', [App\Http\Controllers\HomeController::class, 'floors']);
-Route::get('apartmani/{id}', [App\Http\Controllers\HomeController::class, 'apartmant']);
+Route::post('show-options', [App\Http\Controllers\HomeController::class, 'showOptions']);
+
 Route::post('konfigurator', [App\Http\Controllers\HomeController::class, 'konfigurator']);
 
 Route::group(['prefix' => 'en'], function () use ($routes) {
@@ -66,26 +65,19 @@ Route::group(['prefix' => 'cms', 'middleware' => ['auth', 'active']], function()
         Route::get('/imagedelete/{id}', 'removeImage');
     });
 
-    // Route::resource('menu', 'App\Http\Controllers\MenuController')->except('show');
-    // Route::post('menu/ajax', 'App\Http\Controllers\MenuController@ajax');    
-
-    Route::resource('apartments', 'App\Http\Controllers\ApartmentController')->except('show');
-    Route::post('apartments/ajax', 'App\Http\Controllers\ApartmentController@ajax'); 
-    
-    Route::resource('sliders', 'App\Http\Controllers\SliderController')->except('show');
-    Route::post('sliders/ajax', 'App\Http\Controllers\SliderController@ajax');    
-
     Route::resource('products', 'App\Http\Controllers\ProductController')->except('show');
     Route::post('products/ajax', 'App\Http\Controllers\ProductController@ajax');  
     
     Route::resource('product-position', 'App\Http\Controllers\ProductPositionController')->except('show');
     Route::post('product-position/ajax', 'App\Http\Controllers\ProductPositionController@ajax');   
 
-    Route::resource('floors', 'App\Http\Controllers\FloorController')->except('show');
-    Route::post('floors/ajax', 'App\Http\Controllers\FloorController@ajax');  
+    Route::resource('options', 'App\Http\Controllers\OptionController')->except('show');
+    Route::post('options/ajax', 'App\Http\Controllers\OptionController@ajax');
 
-    Route::resource('messages', 'App\Http\Controllers\MessageController')->except('show');
-    Route::post('messages/ajax', 'App\Http\Controllers\MessageController@ajax');  
+    Route::resource('option-items', 'App\Http\Controllers\OptionItemController')->except('show');
+    Route::post('option-items/ajax/{id}', 'App\Http\Controllers\OptionItemController@ajax');
+    Route::get('option-items/{id}', 'App\Http\Controllers\OptionItemController@index');
+    Route::get('option-items/create/{id}', 'App\Http\Controllers\OptionItemController@create');
 
     Route::resource('settings', 'App\Http\Controllers\SettingsController')->only('update', 'edit');
 

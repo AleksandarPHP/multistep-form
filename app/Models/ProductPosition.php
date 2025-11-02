@@ -11,6 +11,7 @@ class ProductPosition extends Model
     protected $fillable = [
         'title',
         'order',
-        'image'
+        'image',
+        'price'
     ];
 }

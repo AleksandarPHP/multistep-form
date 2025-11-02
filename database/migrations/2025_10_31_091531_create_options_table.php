@@ -11,12 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('configurator_steps', function (Blueprint $table) {
+        Schema::create('options', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('configurator_id')->nullable()->constrained()->onDelete('cascade');
-            $table->integer('step_number');
             $table->string('title');
-            $table->text('description')->nullable();
+            $table->boolean('is_active')->default(false);
+            $table->integer('priority')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('configurator_steps');
+        Schema::dropIfExists('options');
     }
 };

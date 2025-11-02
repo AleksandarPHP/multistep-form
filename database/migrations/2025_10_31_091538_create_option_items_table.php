@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('option_items', function (Blueprint $table) {
             $table->id();
-            $table->json('title')->nullable();
-            $table->json('subtitle')->nullable();
-            $table->json('text')->nullable();
-            $table->string('image1')->nullable();
-            $table->string('image2')->nullable();
-            $table->string('image3')->nullable();
-            $table->string('image4')->nullable();
+            $table->string('title');
+            $table->integer('price');
+            $table->string('image')->nullable();
+            $table->integer('priority')->nullable();
             $table->boolean('is_active')->default(false);
+            $table->unsignedBigInteger('option_id')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('option_items');
     }
 };
