@@ -80,6 +80,8 @@ class AccessoryController extends Controller
     {
         $request->validate([
             'title' => ['required', 'string', 'max:191'],
+            'product_id' => ['required', 'array', 'max:6'],
+            'product_id.*' => ['required', 'integer'],
         ]);
         
         Accessory::create([
@@ -108,6 +110,8 @@ class AccessoryController extends Controller
         
         $request->validate([
             'title' => ['required', 'string', 'max:191'],
+            'product_id' => ['required', 'array', 'max:6'],
+            'product_id.*' => ['required', 'integer'],
         ]);
         
         

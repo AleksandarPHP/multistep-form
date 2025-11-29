@@ -23,7 +23,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Status</th>
-                    <th>Item</th>
+                    <th>Artikel</th>
                     <th class="nosort text-center">Aktion</th>
                 </tr>
                 </thead>
@@ -32,7 +32,7 @@
                     <th>ID</th>
                     <th>Name</th> 
                     <th>Status</th>
-                    <th>Item</th>
+                    <th>Artikel</th>
                     <th class="nosort text-center">Aktion</th>
                 </tr>
                 </tfoot>

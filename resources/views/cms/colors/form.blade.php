@@ -6,9 +6,9 @@
     <li class="breadcrumb-item">
         <a href="{{ url('cms') }}">HOME</a>
     </li>
-    <li class="breadcrumb-item active">Accessories</li>
+    <li class="breadcrumb-item active">Muster</li>
 </ol>
-<h1>Option</h1>
+<h1>Muster</h1>
 <hr>
 <div class="row">
     <div class="col-md-12">
@@ -34,7 +34,7 @@
                         <label for="product_id">Produkte</label>
                         <select name="product_ids[]" multiple="multiple" class="form-control" id="product_ids" {!! $errors->has('product_ids') ? 'style="border-color:red;"' : '' !!}>
                             @foreach ($products as $product)
-                                <option value="{{ $product->id }}" @selected(in_array($product->id, $item->product_id))>{{$product->title}} (id:{{ $product->id }})</option>
+                                <option value="{{ $product->id }}" @if($editing) @selected(in_array($product->id, $item->product_id)) @endif>{{$product->title}} (id:{{ $product->id }})</option>
                             @endforeach
                         </select>
                     </div>
@@ -48,8 +48,8 @@
                 </div>
                 <div class="col-md-12"><hr></div>  
             </div>
-            <button type="submit" class="btn btn-danger mb-3">Sačuvaj</button>
-            <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 ml-auto" style="margin-left: 10px">Odustani</a>
+            <button type="submit" class="btn btn-danger mb-3">Speichern</button>
+            <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 ml-auto" style="margin-left: 10px">Aufgeben</a>
         </form>
     </div>
 </div>
@@ -62,7 +62,7 @@
     });
     $(document).ready(function() {
         $("#product_ids").select2({
-            placeholder: 'Izaberi',
+            placeholder: 'Wählen',
         });
     });
 

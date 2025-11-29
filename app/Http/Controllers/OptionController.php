@@ -81,6 +81,8 @@ class OptionController extends Controller
     {
         $request->validate([
             'title' => ['required', 'string', 'max:191'],
+            'product_id' => ['required', 'array', 'max:6'],
+            'product_id.*' => ['required', 'integer'],
         ]);
         
         Option::create([
@@ -110,6 +112,8 @@ class OptionController extends Controller
         
         $request->validate([
             'title' => ['required', 'string', 'max:191'],
+            'product_id' => ['required', 'array', 'max:6'],
+            'product_id.*' => ['required', 'integer'],
         ]);
         
         

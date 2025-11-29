@@ -6,9 +6,10 @@
     <li class="breadcrumb-item">
         <a href="{{ url('cms') }}">HOME</a>
     </li>
-    <li class="breadcrumb-item active">Optionen</li>
+    <li class="breadcrumb-item active">Muster
+</li>
 </ol>
-<h1>Optionen</h1>
+<h1>Muster</h1>
 <hr>
 <a href="{{ url()->full().'/create'}}" class="btn btn-primary mb-3">Hinzufügen <i class="fa-solid fa-plus"></i></a>
 
@@ -23,7 +24,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Status</th>
-                    <th>Item</th>
+                    <th>Artikel</th>
                     <th class="nosort text-center">Aktion</th>
                 </tr>
                 </thead>
@@ -32,7 +33,7 @@
                     <th>ID</th>
                     <th>Name</th> 
                     <th>Status</th>
-                    <th>Item</th>
+                    <th>Artikel</th>
                     <th class="nosort text-center">Aktion</th>
                 </tr>
                 </tfoot>

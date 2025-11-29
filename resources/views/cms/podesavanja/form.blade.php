@@ -161,7 +161,7 @@
                 @endforeach
                 @endif
             </div>
-            <button type="submit" class="btn btn-danger mb-3">Sačuvaj</button>
+            <button type="submit" class="btn btn-danger mb-3">Speichern</button>
         </form>
     </div>
 </div>

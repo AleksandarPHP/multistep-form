@@ -6,9 +6,9 @@
     <li class="breadcrumb-item">
         <a href="{{ url('cms') }}">HOME</a>
     </li>
-    <li class="breadcrumb-item active">surfaces</li>
+    <li class="breadcrumb-item active">Zu verschattende Fläche</li>
 </ol>
-<h1>surfaces</h1>
+<h1>Zu verschattende Fläche</h1>
 <hr>
 <div class="row">
     <div class="col-md-12">
@@ -33,22 +33,22 @@
 
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="default_value">default_value</label>
-                        <input name="default_value" type="number" step="0.1" class="form-control" id="default_value" placeholder="Order" value="{{ old('default_value', $item->default_value) }}" {!! $errors->has('default_value') ? 'style="border-color:red;"' : '' !!}>
+                        <label for="default_value">Standardwert</label>
+                        <input name="default_value" type="number" step="0.1" class="form-control" id="default_value" placeholder="Standardwert" value="{{ old('default_value', $item->default_value) }}" {!! $errors->has('default_value') ? 'style="border-color:red;"' : '' !!}>
                     </div>
                 </div>
                 <div class="col-md-12"><hr></div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="value_from">value_from</label>
-                        <input name="value_from" type="number" step="0.1" class="form-control" id="value_from" placeholder="Order" value="{{ old('value_from', $item->value_from) }}" {!! $errors->has('value_from') ? 'style="border-color:red;"' : '' !!}>
+                        <label for="value_from">Wert aus</label>
+                        <input name="value_from" type="number" step="0.1" class="form-control" id="value_from" placeholder="Wert aus" value="{{ old('value_from', $item->value_from) }}" {!! $errors->has('value_from') ? 'style="border-color:red;"' : '' !!}>
                     </div>
                 </div>
                 <div class="col-md-12"><hr></div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="value_to">value_to</label>
-                        <input name="value_to" type="number" step="0.1" class="form-control" id="value_to" placeholder="Order" value="{{ old('value_to', $item->value_to) }}" {!! $errors->has('value_to') ? 'style="border-color:red;"' : '' !!}>
+                        <label for="value_to">Wert zu</label>
+                        <input name="value_to" type="number" step="0.1" class="form-control" id="value_to" placeholder="Wert zu" value="{{ old('value_to', $item->value_to) }}" {!! $errors->has('value_to') ? 'style="border-color:red;"' : '' !!}>
                     </div>
                 </div>
                 <div class="col-md-12"><hr></div>
@@ -57,7 +57,7 @@
                         <label for="product_id">Produkte</label>
                         <select name="product_ids[]" multiple="multiple" class="form-control" id="product_ids" {!! $errors->has('product_ids') ? 'style="border-color:red;"' : '' !!}>
                             @foreach ($products as $product)
-                                <option value="{{ $product->id }}" @selected(in_array($product->id, $item->product_id))>{{$product->title}} (id:{{ $product->id }})</option>
+                                <option value="{{ $product->id }}" @if($editing) @selected(in_array($product->id, $item->product_id)) @endif >{{$product->title}} (id:{{ $product->id }})</option>
                             @endforeach
                         </select>
                     </div>
@@ -71,8 +71,8 @@
                 </div>
                 <div class="col-md-12"><hr></div>  
             </div>
-            <button type="submit" class="btn btn-danger mb-3">Sačuvaj</button>
-            <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 ml-auto" style="margin-left: 10px">Odustani</a>
+            <button type="submit" class="btn btn-danger mb-3">Speichern</button>
+            <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 ml-auto" style="margin-left: 10px">Aufgeben</a>
         </form>
     </div>
 </div>
@@ -85,7 +85,7 @@
     });
     $(document).ready(function() {
         $("#product_ids").select2({
-            placeholder: 'Izaberi',
+            placeholder: 'Wählen',
         });
     });
 

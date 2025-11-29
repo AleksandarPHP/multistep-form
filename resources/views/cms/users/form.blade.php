@@ -54,8 +54,8 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-danger mb-3">Sačuvaj</button>
-                    <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 ml-auto" style="margin-left: 10px">Odustani</a>
+                    <button type="submit" class="btn btn-danger mb-3">Speichern</button>
+                    <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 ml-auto" style="margin-left: 10px">Aufgeben</a>
                 </form>
             </div>
         </div>

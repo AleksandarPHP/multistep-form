@@ -80,6 +80,8 @@ class SurfaceController extends Controller
         $request->validate([
             'title' => ['required', 'string', 'max:191'],
             'priority' => ['nullable', 'numeric'],
+            'product_id' => ['required', 'array', 'max:6'],
+            'product_id.*' => ['required', 'integer'],
             'default_value' => ['required', 'numeric'],
             'value_from' => ['required', 'numeric'],
             'value_to' => ['required', 'numeric'],
@@ -115,6 +117,8 @@ class SurfaceController extends Controller
         $request->validate([
             'title' => ['required', 'string', 'max:191'],
             'priority' => ['nullable', 'numeric'],
+            'product_id' => ['required', 'array', 'max:6'],
+            'product_id.*' => ['required', 'integer'],
             'default_value' => ['required', 'numeric'],
             'value_from' => ['required', 'numeric'],
             'value_to' => ['required', 'numeric'],

@@ -21,7 +21,7 @@ class Locale
             app()->setLocale('en');
             setlocale(LC_ALL, 'en_US.UTF-8');
         } else { 
-            app()->setLocale('sr');
+            app()->setLocale('en');
             setlocale(LC_ALL, 'sr_RS.utf8@latin');
         }
         

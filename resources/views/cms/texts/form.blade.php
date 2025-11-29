@@ -74,7 +74,7 @@
                             @endif
                     </span>
                     <input name="image" class="input-file input-file1" id="my-file1" type="file">
-                    <label tabindex="0" for="my-file1" class="input-file-trigger input-file-trigger1">Odaberite sliku...</label>
+                    <label tabindex="0" for="my-file1" class="input-file-trigger input-file-trigger1">Wählen Sie ein Bild...</label>
                     </div>
                     <script>
                         var fileInput = document.querySelector(".input-file1"),
@@ -115,7 +115,7 @@
                                 @endif
                         </span>
                         <input name="image{{$i}}" class="input-file input-file1" id="my-file1" type="file">
-                        <label tabindex="0" for="my-file1" class="input-file-trigger input-file-trigger1">Odaberite sliku...</label>
+                        <label tabindex="0" for="my-file1" class="input-file-trigger input-file-trigger1">Wählen Sie ein Bild...</label>
                         </div>
                         <script>
                             var fileInput = document.querySelector(".input-file1"),
@@ -134,8 +134,8 @@
                     </div>
                 @endfor
             </div>
-            <button type="submit" class="btn btn-danger mb-3">Sačuvaj</button>
-            <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 ml-auto" style="margin-left: 10px">Odustani</a>
+            <button type="submit" class="btn btn-danger mb-3">Speichern</button>
+            <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 ml-auto" style="margin-left: 10px">Aufgeben</a>
         </form>
     </div>
 </div>

@@ -6,9 +6,9 @@
     <li class="breadcrumb-item">
         <a href="{{ url('cms') }}">HOME</a>
     </li>
-    <li class="breadcrumb-item active">Option</li>
+    <li class="breadcrumb-item active">E-mail</li>
 </ol>
-<h1>Option</h1>
+<h1>E-mail</h1>
 <hr>
 <div class="row">
     <div class="col-md-12">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-danger mb-3 mt-4">Sačuvaj</button>
+            <button type="submit" class="btn btn-danger mb-3 mt-4">Speichern</button>
         </form>
     </div>
 </div>
@@ -35,7 +35,7 @@
     });
     $(document).ready(function() {
         $("#product_ids").select2({
-            placeholder: 'Izaberi',
+            placeholder: 'Wählen',
         });
     });
 

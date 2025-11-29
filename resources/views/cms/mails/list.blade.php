@@ -6,9 +6,9 @@
     <li class="breadcrumb-item">
         <a href="{{ url('cms') }}">HOME</a>
     </li>
-    <li class="breadcrumb-item active">Optionen</li>
+    <li class="breadcrumb-item active">E-mail</li>
 </ol>
-<h1>Optionen</h1>
+<h1>E-mail</h1>
 <hr>
 
 <div class="card mb-3">

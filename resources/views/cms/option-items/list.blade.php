@@ -6,9 +6,9 @@
     <li class="breadcrumb-item">
         <a href="{{ url('cms') }}">HOME</a>
     </li>
-    <li class="breadcrumb-item active">Items</li>
+    <li class="breadcrumb-item active">Artikel</li>
 </ol>
-<h1>Items</h1>
+<h1>Artikel</h1>
 <hr>
 <a href="{{ url('cms/option-items/create')}}" class="btn btn-primary mb-3">Hinzufügen <i class="fa-solid fa-plus"></i></a>
 <div class="card mb-3">

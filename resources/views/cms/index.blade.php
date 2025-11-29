@@ -24,11 +24,11 @@
           array('cms/products', 'Produkte', 'cubes'),
           array('cms/products-position', 'Produkte position', 'building'),
           array('cms/options', 'Optionen', 'cogs'),
-          array('cms/accessories', 'Accessories', 'wrench'),
-          array('cms/colors', 'Colors', 'palette'),
-          array('cms/surfaces', 'Surfaces', 'list-ol'),
-          array('cms/mails', 'mails', 'envelope'),
-          array('cms/settings/1/edit', 'Settings', 'cog'),
+          array('cms/accessories', 'Zubehör', 'wrench'),
+          array('cms/colors', 'Muster', 'palette'),
+          array('cms/surfaces', 'Oberflächen', 'list-ol'),
+          array('cms/mails', 'E-Mails', 'envelope'),
+          array('cms/settings/1/edit', 'Einstellungen', 'cog'),
           array('cms/users', 'Benutzer', 'users'),
 
         );

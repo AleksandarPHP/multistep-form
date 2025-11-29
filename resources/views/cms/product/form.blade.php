@@ -32,7 +32,7 @@
                 <div class="col-md-12"><hr></div>
                 <div class="col-md-12">
                     <div class="form-group">
-                        <label for="price">Price</label>
+                        <label for="price">Preis</label>
                         <input name="price" type="number" class="form-control" id="price" placeholder="Name" value="{{ old('price', $item->price) }}" {!! $errors->has('price') ? 'style="border-color:red;"' : '' !!}>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                                 @endif
                         </span>
                         <input name="image" class="input-file input-file1" id="my-file1" type="file">
-                        <label tabindex="0" for="my-file1" class="input-file-trigger input-file-trigger1">Odaberite sliku...</label>
+                        <label tabindex="0" for="my-file1" class="input-file-trigger input-file-trigger1">Wählen Sie ein Bild...</label>
                         </div>
                         <script>
                             var fileInput = document.querySelector(".input-file1"),
@@ -84,8 +84,8 @@
                     </div>
                 <div class="col-md-12"><hr></div>  
             </div>
-            <button type="submit" class="btn btn-danger mb-3">Sačuvaj</button>
-            <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 ml-auto" style="margin-left: 10px">Odustani</a>
+            <button type="submit" class="btn btn-danger mb-3">Speichern</button>
+            <a href="{{ url()->previous() }}" class="btn btn-secondary mb-3 ml-auto" style="margin-left: 10px">Aufgeben</a>
         </form>
     </div>
 </div>

@@ -29,20 +29,20 @@
         <form method="post" action="{{ route('login') }}">
           @csrf
           <div class="form-group">
-            <label for="email">E-Mail adresa</label>
-            <input class="form-control" id="email" type="email" name="email" placeholder="E-Mail adresa" value="{{ old('email') }}" {!! $errors->has('email') ? 'style="border-color:red;"' : '' !!}>
+            <label for="email">E-Mail-Adresse</label>
+            <input class="form-control" id="email" type="email" name="email" placeholder="E-Mail-Adresse" value="{{ old('email') }}" {!! $errors->has('email') ? 'style="border-color:red;"' : '' !!}>
           </div>
           <div class="form-group">
-            <label for="password">Lozinka</label>
-            <input class="form-control" id="password" type="password" name="password" placeholder="Lozinka" {!! $errors->has('password') ? 'style="border-color:red;"' : '' !!}>
+            <label for="password">Passwort</label>
+            <input class="form-control" id="password" type="password" name="password" placeholder="Passwort" {!! $errors->has('password') ? 'style="border-color:red;"' : '' !!}>
           </div>
           <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Zapamti me</label>
+                <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Erinnere dich an mich</label>
             </div>
           </div>
-          <button class="btn btn-danger btn-block" type="submit">Uloguj se</button>
+          <button class="btn btn-danger btn-block" type="submit">Einloggen</button>
         </form>
       </div>
     </div>

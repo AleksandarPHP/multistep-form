@@ -6,9 +6,9 @@
     <li class="breadcrumb-item">
         <a href="{{ url('cms') }}">HOME</a>
     </li>
-    <li class="breadcrumb-item active">surfaces</li>
+    <li class="breadcrumb-item active">Zu verschattende Fläche</li>
 </ol>
-<h1>surfaces</h1>
+<h1>Zu verschattende Fläche</h1>
 <hr>
 <a href="{{ url()->full().'/create'}}" class="btn btn-primary mb-3">Hinzufügen <i class="fa-solid fa-plus"></i></a>
 
