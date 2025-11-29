@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const steps = document.querySelectorAll(".form-step");
   const progressSteps = document.querySelectorAll(".form-progress-step");
   const progressWrapper = document.querySelector(".form-progress-wrapper");
-  const choiceCards = document.querySelectorAll(".choice-card");
 
   let currentStep = 0;
   const totalSteps = 7;
@@ -46,19 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
-  initRangeSliders();
-
-  choiceCards.forEach((card) => {
-    card.addEventListener("click", function () {
-      const parentStep = this.closest(".form-step");
-      parentStep.querySelectorAll(".choice-card").forEach((c) => {
-        c.classList.remove("selected");
-      });
-
-      this.classList.add("selected");
-    });
-  });
 
   const formSelectionBtns = document.querySelectorAll(".form-selection-btn");
   formSelectionBtns.forEach((btn) => {
@@ -184,18 +170,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(".card-option").click(function() {
-    $(".card-option").removeClass('selected');
+  $(".card-option").removeClass('selected');
   $(this).addClass('selected')
   $(this).parent().find('input').prop('checked', true)
   showOptionItems($(this).data('id'))
 });
 
+$(".produktePosition").click(function() {
+  $(".produktePosition").removeClass('selected');
+  $(this).addClass('selected')
+  $(this).parent().find('input').prop('checked', true)
+});
+
+$(".card-home").click(function() {
+  $(".card-home").removeClass('selected');
+  $(this).addClass('selected')
+  $(this).parent().find('input').prop('checked', true)
+});
 
 var loadingAddToCart = false;
 function showOptionItems(id) {
-  if(loadingAddToCart === false) {
-    console.log(id);
-  
+  if(loadingAddToCart === false) {  
     $.ajax({
       url: "/show-options",
       method: 'POST',
@@ -216,6 +211,57 @@ function showOptionItems(id) {
         }
         $('#product_modal .alert-danger').text(message).show();
         $('#product_modal').modal();
+        loadingAddToCart = false;
+      }
+    });
+
+    $.ajax({
+      url: "/show-accessories",
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      data: {id: id, _token: $('meta[name="csrf-token"]').attr('content')},
+      success: function(data) {
+        
+        $('#accessories-list').html(data.accessories);
+        loadingAddToCart = false;
+      }, error: function(data) {              
+        var message = data.responseJSON.message;
+        if(message == '') message = errorMessage;
+        if(type == 'default') {
+          element.removeClass('loading');
+          element.prop('disabled', false);
+        } else if(type == 'wish') {
+          $('body').removeClass('body_loading');
+        }
+        $('#product_modal .alert-danger').text(message).show();
+        $('#product_modal').modal();
+        loadingAddToCart = false;
+      }
+    });
+
+    $.ajax({
+      url: "/show-colors",
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      data: {id: id, _token: $('meta[name="csrf-token"]').attr('content')},
+      success: function(data) {
+        
+        $('#colors-list').html(data.colors);
+        loadingAddToCart = false;
+      }, error: function(data) {              
+      }
+    });
+
+    $.ajax({
+      url: "/show-surfaces",
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      data: {id: id, _token: $('meta[name="csrf-token"]').attr('content')},
+      success: function(data) {
+      
+      $('#surfaces-list').html(data.surfaces);
+        loadingAddToCart = false;
+      }, error: function(data) {              
         loadingAddToCart = false;
       }
     });

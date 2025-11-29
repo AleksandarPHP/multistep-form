@@ -1,17 +1,17 @@
-<div data-step="2" id="options-list">
-    @foreach ($options as $option)
+<div data-step="2" id="accessories-list">
+    @foreach ($accessories as $accessory)
         <div id="card-s2" >
             <div class="row">
                 <div class="col-12">
                 <p class="subtitle">
-                    {{ $option->title }}
+                    {{ $accessory->title }}
                 </p>
                 </div>
             </div>
             <div class="row g-4">
-                @foreach ($option->items as $item)
+                @foreach ($accessory->items as $item)
                     <div class="col-lg-3 col-md-6">
-                        <div @class(['choice-card card-item item-'.$option->id, 'selected'  => $loop->first]) data-item-id="{{ $option->id }}">
+                        <div @class(['choice-card card-accessory accessory-'.$accessory->id, 'selected'  => $loop->first]) data-accessory-id="{{ $accessory->id }}">
                             <div class="choice-image">
                                 @if($item->image)
                                 <img
@@ -29,20 +29,26 @@
                             </div>
                             <div class="choice-text">
                             <p>{{ $item->title }}</p>
-                            <input class="d-none"type="radio" data-price="{{ $item->price }}" name="option[{{ $option->id }}]" id="option-{{ $item->id }}" value="{{ $item->title }}"  @checked($loop->first)>
+                            <input class="d-none"type="radio" data-price="1225.23" name="accessory[{{ $accessory->id }}]" id="" value="{{ $item->title }}" @checked($loop->first)>
                             </div>
                         </div>
                     </div>
                 @endforeach
                 <script>
-                    $(document).on('click', '.card-item', function() {
-                        let id = $(this).data('item-id');
-                        $('.item-' + id).removeClass('selected');
-                        $('.item-' + id).parent().find('input').prop('checked', false)
+                    // $(document).ready(function() {
+                    //     $('.card-accessory.selected').each(function () {
+                    //         $(this).find('input[type="radio"]').prop('checked', true);
+                    //     });
+                    // });
 
+                    $(document).on('click', '.card-accessory', function() {
+                        let id = $(this).data('accessory-id');
+                        $('.accessory-' + id).removeClass('selected');
+                        $('.accessory-' + id).parent().find('input').prop('checked', false)
+                                                
                         $(this).addClass('selected')
                         $(this).parent().find('input').prop('checked', true)
-                        });
+                    });
                 </script>
             </div>
         </div>

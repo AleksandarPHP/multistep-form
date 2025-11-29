@@ -47,7 +47,7 @@
               <div class="form-step active" data-step="0">
                 <div class="row g-4">
                   <div class="col-md-6">
-                    <div class="choice-card card-s0">
+                    <div class="choice-card card-home">
                       <div class="choice-image">
                         <img
                           src="{{ asset('assets/images/Ich-weiß-schon-was-ich-will.png')}}"
@@ -62,7 +62,7 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <div class="choice-card card-s0">
+                    <div class="choice-card card-home">
                       <div class="choice-image">
                         <img
                           src="{{ asset('assets/images/Ikonwwhatiwill.png')}}"
@@ -80,10 +80,10 @@
               </div>
 
               @include('partials.step-1')
-              @include('partials.step-2')
-              @include('partials.step-3')
-              @include('partials.step-4')
-              @include('partials.step-5')
+              <div class="form-step" data-step="2" id="options-list"></div>
+              <div class="form-step" data-step="3" id="accessories-list"></div>
+              <div class="form-step" data-step="4" id="surfaces-list"></div>
+              <div class="form-step" data-step="5" id="colors-list"></div>
 
               <div class="form-step" data-step="6">
                 <div class="row">

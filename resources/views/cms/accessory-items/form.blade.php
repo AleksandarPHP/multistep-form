@@ -12,7 +12,7 @@
 <hr>
 <div class="row">
     <div class="col-md-12">
-        <form method="post" action="@if(!$editing) {{ url('cms/option-items') }} @else {{ url('cms/option-items/'.$item->id) }} @endif" enctype="multipart/form-data">
+        <form method="post" action="@if(!$editing) {{ url('cms/accessory-items') }} @else {{ url('cms/accessory-items/'.$item->id) }} @endif" enctype="multipart/form-data">
             @csrf
             @if($editing) @method('PUT') @endif
             <div class="row">

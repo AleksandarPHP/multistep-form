@@ -24,6 +24,10 @@
           array('cms/products', 'Produkte', 'cubes'),
           array('cms/products-position', 'Produkte position', 'building'),
           array('cms/options', 'Optionen', 'cogs'),
+          array('cms/accessories', 'Accessories', 'wrench'),
+          array('cms/colors', 'Colors', 'palette'),
+          array('cms/surfaces', 'Surfaces', 'list-ol'),
+          array('cms/mails', 'mails', 'envelope'),
           array('cms/settings/1/edit', 'Settings', 'cog'),
           array('cms/users', 'Benutzer', 'users'),
 

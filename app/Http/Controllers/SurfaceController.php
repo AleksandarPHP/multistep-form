@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\Helper;
 use App\Models\Product;
+use App\Models\Surface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
-class ProductController extends Controller
+class SurfaceController extends Controller
 {
     public function index()
     {
-        return view('cms.product.list');
+        return view('cms.surfaces.list');
     }
 
     public function ajax(Request $request)
@@ -28,12 +28,12 @@ class ProductController extends Controller
 
         $sortable = [0, 1, 2, 3, 4];
 
-        $sqlRec = Product::query();
+        $sqlRec = Surface::query();
 
         $search = $request['search']['value'];
         if(!empty($search) && !is_null($search) && is_string($search) && $search!="") {
             $sqlRec->where(function($q) use ($search) {
-                $q->whereRaw("(name like ? or id like ? or email like ?)", ["%$search%", "%$search%", "%$search%"]);
+                $q->whereRaw("(title like ? or id like ?)", ["%$search%", "%$search%"]);
             });
         }
         
@@ -55,7 +55,7 @@ class ProductController extends Controller
                 '0' => $row->id,
                 '1' => $row->title,
                 '2' => '<span class="item-active" style="color: #0b3663;"><i class="fa fa-'.($row->is_active ? 'check-square' : 'times').'"></i></span>',
-                '3' => '<a href="'.url('cms/products/'.$row->id.'/edit').'" class="action-edit"><i class="fa fa-edit"></i></a><a href="'.url('cms/products').'" class="action-delete confirmation" data-id="'.$row->id.'"><i class="fa fa-trash"></i><form id="delete-form'.$row->id.'" action="'.url('cms/product-position/'.$row->id).'" method="POST" style="display: none;">'.csrf_field().'<input type="hidden" name="_method" value="delete" /></form></a>',
+                '3' => '<a href="'.url('cms/surfaces/'.$row->id.'/edit').'" class="action-edit"><i class="fa fa-edit"></i></a><a href="'.url('cms/surfaces').'" class="action-delete confirmation" data-id="'.$row->id.'"><i class="fa fa-trash"></i><form id="delete-form'.$row->id.'" action="'.url('cms/surfaces/'.$row->id).'" method="POST" style="display: none;">'.csrf_field().'<input type="hidden" name="_method" value="delete" /></form></a>',
             ];
         }
         
@@ -71,80 +71,82 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('cms.product.form', ['item' => new Product(), 'editing' => false]);
+        $products = Product::where('is_active', 1 )->get();
+        return view('cms.surfaces.form', ['item' => new Surface(), 'editing' => false, 'products' => $products]);
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'title' => ['required', 'string', 'max:191'],
+            'priority' => ['nullable', 'numeric'],
+            'default_value' => ['required', 'numeric'],
+            'value_from' => ['required', 'numeric'],
+            'value_to' => ['required', 'numeric'],
         ]);
-
-        $image = $request->image;
-        if($request->hasFile('image')) $image = Helper::saveImage($request->image, 'Product', $request->title, $image);
-    
         
-        Product::create([
+        Surface::create([
             'title' => $request->title,
-            'order' => $request->order,
-            'price' => $request->price,
+            'priority' => $request->priority,
+            'default_value' => $request->default_value, 
+            'value_from' => $request->value_from,
+            'value_to' => $request->value_to,
+            'product_id' => $request->product_ids,
             'is_active' => $request->is_active ? 1 : 0,
-            'image' => $image
         ]);
 
-        Cache::forget( 'products');
+        Cache::forget( 'surfaces');
 
         session()->flash('success', 'Dodato.');
 
-        return redirect('cms/products');
+        return redirect('cms/surfaces');
     }
     
     public function edit($id)
     {
-        return view('cms.product.form', ['item' => Product::findOrFail($id), 'editing' => true]);
+        $products = Product::where('is_active', 1 )->get();
+        return view('cms.surfaces.form', ['item' => Surface::findOrFail($id), 'editing' => true, 'products' => $products]);
     }
 
     public function update(Request $request, $id)
     {
-        // dd($request->all());
-        $item = Product::findOrFail($id);
+        $item = Surface::findOrFail($id);
         
         $request->validate([
             'title' => ['required', 'string', 'max:191'],
-            'order' => ['nullable', 'string'],
-            'price' => ['required', 'string'],
-            'is_active' => ['nullable', 'string', 'in:1'],
-            'image' => ['nullable', 'mimes:jpeg,png,svg,webp', 'image', 'max:5000'],
+            'priority' => ['nullable', 'numeric'],
+            'default_value' => ['required', 'numeric'],
+            'value_from' => ['required', 'numeric'],
+            'value_to' => ['required', 'numeric'],
         ]);
         
-        $image = $item->image;
-        if($request->hasFile('image')) $image = Helper::saveImage($request->image, 'Produkte', $item->title, $image);
-        else if($item->title != $item->title && !is_null($image)) $image = Helper::renameImage($image, 'Produkte', $item->title);
         
         $item->title = $request->title;
-        $item->price = $request->price;
-        $item->order = $request->order;
+        $item->product_id = $request->product_ids;
+        $item->default_value = $request->default_value;
+        $item->value_from = $request->value_from;
+        $item->value_to = $request->value_to;
+        $item->priority = $request->priority;
         $item->is_active = $request->is_active ? 1 : 0;
-        $item->image = $image;
         
         $item->save();
 
-        Cache::forget( 'products');
+        Cache::forget( 'surfaces');
 
         session()->flash('success', 'Izmjenjeno.');
 
-        return redirect('cms/products');
+        return redirect('cms/surfaces');
     }
 
     public function destroy($id)
     {
-        $user = Product::findOrFail($id);    
-        $user->delete();
+        $item = Surface::findOrFail($id);    
+        $item->delete();
 
-        Cache::forget( 'product');
+        Cache::forget( 'surfaces');
 
         session()->flash('success', 'Obrisano.');
         
-        return redirect('cms/products');
+        return redirect('cms/surfaces');
     }
 }

@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Helper;
-use App\Models\Product;
+use App\Models\Accessory;
+use App\Models\AccessoryItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
-class ProductController extends Controller
+class AccessoryItemController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        return view('cms.product.list');
+        return view('cms.accessory-items.list',['id'=> $id]);
     }
 
-    public function ajax(Request $request)
+    public function ajax(Request $request, $id)
     {       
 
         $data = [];
@@ -28,12 +29,12 @@ class ProductController extends Controller
 
         $sortable = [0, 1, 2, 3, 4];
 
-        $sqlRec = Product::query();
-
+        $sqlRec = AccessoryItem::query();
+        
         $search = $request['search']['value'];
         if(!empty($search) && !is_null($search) && is_string($search) && $search!="") {
             $sqlRec->where(function($q) use ($search) {
-                $q->whereRaw("(name like ? or id like ? or email like ?)", ["%$search%", "%$search%", "%$search%"]);
+                $q->whereRaw("(title like ? or id like ?)", ["%$search%", "%$search%"]);
             });
         }
         
@@ -51,11 +52,17 @@ class ProductController extends Controller
         $rows = $sqlRec->take($length)->skip($start)->get();
         
         foreach($rows as $row) {
+            $options = [];
+            if ($row->option) {
+                foreach($row->option as $option) {
+                    $options[] = $option->title;
+                }
+            }
             $data[] = [
                 '0' => $row->id,
                 '1' => $row->title,
                 '2' => '<span class="item-active" style="color: #0b3663;"><i class="fa fa-'.($row->is_active ? 'check-square' : 'times').'"></i></span>',
-                '3' => '<a href="'.url('cms/products/'.$row->id.'/edit').'" class="action-edit"><i class="fa fa-edit"></i></a><a href="'.url('cms/products').'" class="action-delete confirmation" data-id="'.$row->id.'"><i class="fa fa-trash"></i><form id="delete-form'.$row->id.'" action="'.url('cms/product-position/'.$row->id).'" method="POST" style="display: none;">'.csrf_field().'<input type="hidden" name="_method" value="delete" /></form></a>',
+                '3' => '<a href="'.url('cms/accessory-items/'.$row->id.'/edit').'" class="action-edit"><i class="fa fa-edit"></i></a><a href="'.url('cms/accessory-items').'" class="action-delete confirmation" data-id="'.$row->id.'"><i class="fa fa-trash"></i><form id="delete-form'.$row->id.'" action="'.url('cms/accessory-items/'.$row->id).'" method="POST" style="display: none;">'.csrf_field().'<input type="hidden" name="_method" value="delete" /></form></a>',
             ];
         }
         
@@ -71,7 +78,8 @@ class ProductController extends Controller
 
     public function create()
     {
-        return view('cms.product.form', ['item' => new Product(), 'editing' => false]);
+        $options = Accessory::where('is_active', 1)->get();
+        return view('cms.accessory-items.form', ['item' => new AccessoryItem(), 'editing' => false, 'options' => $options]);
     }
 
     public function store(Request $request)
@@ -81,70 +89,72 @@ class ProductController extends Controller
         ]);
 
         $image = $request->image;
-        if($request->hasFile('image')) $image = Helper::saveImage($request->image, 'Product', $request->title, $image);
+        if($request->hasFile('image')) $image = Helper::saveImage($request->image, 'accessory-items', $request->title, $image);
     
         
-        Product::create([
+        $option = AccessoryItem::create([
             'title' => $request->title,
-            'order' => $request->order,
+            'priority' => $request->priority,
             'price' => $request->price,
-            'is_active' => $request->is_active ? 1 : 0,
+            // 'option_id' => $request->option_ids,
             'image' => $image
         ]);
+        $option->option()->sync($request->option_ids);
 
-        Cache::forget( 'products');
+        Cache::forget( 'accessory-items');
 
         session()->flash('success', 'Dodato.');
 
-        return redirect('cms/products');
+        return redirect('cms/accessories');
     }
     
     public function edit($id)
     {
-        return view('cms.product.form', ['item' => Product::findOrFail($id), 'editing' => true]);
+        $options = Accessory::where('is_active', 1)->get();
+        return view('cms.accessory-items.form', ['item' => AccessoryItem::findOrFail($id), 'editing' => true, 'options' => $options]);
     }
 
     public function update(Request $request, $id)
     {
-        // dd($request->all());
-        $item = Product::findOrFail($id);
+        $item = AccessoryItem::findOrFail($id);
         
         $request->validate([
             'title' => ['required', 'string', 'max:191'],
-            'order' => ['nullable', 'string'],
+            'priority' => ['nullable', 'string'],
             'price' => ['required', 'string'],
             'is_active' => ['nullable', 'string', 'in:1'],
             'image' => ['nullable', 'mimes:jpeg,png,svg,webp', 'image', 'max:5000'],
         ]);
         
         $image = $item->image;
-        if($request->hasFile('image')) $image = Helper::saveImage($request->image, 'Produkte', $item->title, $image);
-        else if($item->title != $item->title && !is_null($image)) $image = Helper::renameImage($image, 'Produkte', $item->title);
+        if($request->hasFile('image')) $image = Helper::saveImage($request->image, 'accessory-items', $item->title, $image);
+        else if($item->title != $item->title && !is_null($image)) $image = Helper::renameImage($image, 'accessory-items', $item->title);
         
         $item->title = $request->title;
         $item->price = $request->price;
-        $item->order = $request->order;
+        $item->priority = $request->priority;
         $item->is_active = $request->is_active ? 1 : 0;
         $item->image = $image;
+        $item->option()->sync($request->option_ids);
         
         $item->save();
 
-        Cache::forget( 'products');
+        Cache::forget( 'accessory_item');
 
         session()->flash('success', 'Izmjenjeno.');
 
-        return redirect('cms/products');
+        return redirect('cms/accessories');
     }
 
     public function destroy($id)
     {
-        $user = Product::findOrFail($id);    
+        $user = AccessoryItem::findOrFail($id);    
         $user->delete();
 
-        Cache::forget( 'product');
+        Cache::forget( 'accessory_item');
 
         session()->flash('success', 'Obrisano.');
         
-        return redirect('cms/products');
+        return redirect('cms/accessories');
     }
 }

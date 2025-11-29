@@ -13,7 +13,7 @@
                 <div class="row g-4 mb-3">
                   @foreach ($products as $product)
                   <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-option" data-id="{{ $product->id }}">
+                    <div @class(['choice-card card-option', 'selected'  => $loop->first]) data-id="{{ $product->id }}">
                       <div class="choice-image"> 
                         @if ($product->image)
                         <img
@@ -23,7 +23,7 @@
                         />
                         @else
                         <img
-                          src="{{ asset('assets/images/produktauswahl___kassetten_markise.png')}}"
+                          src="{{ asset('cmsfiles/images/placeholder-images.jpg')}}"
                           alt="{{$product->title}}"
                           class="img-fluid"
                         />    
@@ -32,7 +32,7 @@
                       </div>
                       <div class="choice-text">
                         <p>{{$product->title}}</p>
-                        <input class="d-none" type="radio" data-price="{{$product->title}}" name="product" id="{{$product->id}}" value="{{$product->title}}">
+                        <input class="d-none" type="radio" data-price="{{$product->title}}" name="product" id="{{$product->id}}" value="{{$product->title}}" @if($loop->first) checked data-first="{{$product->id}}" @endif>
                       </div>
                     </div>
                   </div>
@@ -51,7 +51,7 @@
                 <div class="row g-4">
                   @foreach ($items as $item)
                   <div class="col-lg-3 col-md-6">
-                    <div class="choice-card card-s1-1">
+                    <div class="choice-card produktePosition">
                       <div class="choice-image">
                         @if($item->image)
                         <img
@@ -61,7 +61,7 @@
                         />
                         @else
                         <img
-                          src="{{ asset('assets/images/placeholder-images.jpg')}}"
+                          src="{{ asset('cmsfiles/images/placeholder-images.jpg')}}"
                           alt="{{$item->title}}"
                           class="img-fluid"
                         />    
@@ -69,7 +69,7 @@
                       </div>
                       <div class="choice-text">
                         <p>{{ $item->title }}</p>
-                        <input class="d-none"type="radio" data-price="{{ $item->price }}" name="product_position" id="{{ $item->id }}" value="{{$item->title}}">
+                        <input class="d-none"type="radio" data-price="{{ $item->price }}" name="product_position" id="product_position_{{ $item->id }}" value="{{$item->title}}">
                       </div>
                     </div>
                   </div>
@@ -113,3 +113,14 @@
                   </div>
                 </div>
               </div>
+
+
+<script>
+  $(document).ready(function () {
+    let first = $('input[data-first]').data('first');
+    
+    if (first) {
+        showOptionItems(first);
+    }
+});
+</script>

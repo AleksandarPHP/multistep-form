@@ -186,13 +186,13 @@ class Helper {
 
     public static function produkte()
     {
-        $products = Product::where('is_active', 1)->orderBy('order', 'ASC')->get();
+        $products = Product::where('is_active', 1)->orderBy('order', 'DESC')->get();
         return $products;    
     }
     
     public static function produktePosition()
     {
-        $products = ProductPosition::where('is_active', 1)->orderBy('order', 'ASC')->get();
+        $products = ProductPosition::where('is_active', 1)->orderBy('order', 'DESC')->get();
         return $products;    
     }
 

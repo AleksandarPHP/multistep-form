@@ -6,11 +6,12 @@
     <li class="breadcrumb-item">
         <a href="{{ url('cms') }}">HOME</a>
     </li>
-    <li class="breadcrumb-item active">Produkte</li>
+    <li class="breadcrumb-item active">Optionen</li>
 </ol>
-<h1>Produkte</h1>
+<h1>Optionen</h1>
 <hr>
-<a href="{{ url('cms/products/create')}}" class="btn btn-primary mb-3">Hinzufügen <i class="fa-solid fa-plus"></i></a>
+<a href="{{ url()->full().'/create'}}" class="btn btn-primary mb-3">Hinzufügen <i class="fa-solid fa-plus"></i></a>
+
 <div class="card mb-3">
     <div class="card-header">
         <i class="fa fa-table"></i> Liste</div>
@@ -22,6 +23,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Status</th>
+                    <th>Item</th>
                     <th class="nosort text-center">Aktion</th>
                 </tr>
                 </thead>
@@ -30,6 +32,7 @@
                     <th>ID</th>
                     <th>Name</th> 
                     <th>Status</th>
+                    <th>Item</th>
                     <th class="nosort text-center">Aktion</th>
                 </tr>
                 </tfoot>
@@ -80,7 +83,7 @@ $(document).ready(function() {
     "bProcessing": true,
     "serverSide": true,
     "ajax": {
-        url: "{{ url('cms/products/ajax') }}",
+        url: "{{ url('cms/accessories/ajax') }}",
         type: "post",
         headers: {
             'X-CSRF-Token': "{{ csrf_token() }}"

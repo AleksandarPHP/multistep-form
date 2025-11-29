@@ -6,6 +6,9 @@ $routes = [
     '/' => 'index',
 ];
 Route::post('show-options', [App\Http\Controllers\HomeController::class, 'showOptions']);
+Route::post('show-accessories', [App\Http\Controllers\HomeController::class, 'showAccessories']);
+Route::post('show-colors', [App\Http\Controllers\HomeController::class, 'showColors']);
+Route::post('show-surfaces', [App\Http\Controllers\HomeController::class, 'showSurfaces']);
 
 Route::post('konfigurator', [App\Http\Controllers\HomeController::class, 'konfigurator']);
 
@@ -74,10 +77,32 @@ Route::group(['prefix' => 'cms', 'middleware' => ['auth', 'active']], function()
     Route::resource('options', 'App\Http\Controllers\OptionController')->except('show');
     Route::post('options/ajax', 'App\Http\Controllers\OptionController@ajax');
 
+    Route::resource('accessories', 'App\Http\Controllers\AccessoryController')->except('show');
+    Route::post('accessories/ajax', 'App\Http\Controllers\AccessoryController@ajax');
+
+    Route::resource('colors', 'App\Http\Controllers\ColorController')->except('show');
+    Route::post('colors/ajax', 'App\Http\Controllers\ColorController@ajax');
+
+    Route::resource('surfaces', 'App\Http\Controllers\SurfaceController')->except('show');
+    Route::post('surfaces/ajax', 'App\Http\Controllers\SurfaceController@ajax');
+    
+    Route::resource('mails', 'App\Http\Controllers\MailController')->except('show');
+    Route::post('mails/ajax', 'App\Http\Controllers\MailController@ajax');
+
     Route::resource('option-items', 'App\Http\Controllers\OptionItemController')->except('show');
     Route::post('option-items/ajax/{id}', 'App\Http\Controllers\OptionItemController@ajax');
     Route::get('option-items/{id}', 'App\Http\Controllers\OptionItemController@index');
     Route::get('option-items/create/{id}', 'App\Http\Controllers\OptionItemController@create');
+
+    Route::resource('accessory-items', 'App\Http\Controllers\AccessoryItemController')->except('show');
+    Route::post('accessory-items/ajax/{id}', 'App\Http\Controllers\AccessoryItemController@ajax');
+    Route::get('accessory-items/{id}', 'App\Http\Controllers\AccessoryItemController@index');
+    Route::get('accessory-items/create/{id}', 'App\Http\Controllers\AccessoryItemController@create');
+
+    Route::resource('color-items', 'App\Http\Controllers\ColorItemController')->except('show');
+    Route::post('color-items/ajax/{id}', 'App\Http\Controllers\ColorItemController@ajax');
+    Route::get('color-items/{id}', 'App\Http\Controllers\ColorItemController@index');
+    Route::get('color-items/create/{id}', 'App\Http\Controllers\ColorItemController@create');
 
     Route::resource('settings', 'App\Http\Controllers\SettingsController')->only('update', 'edit');
 
