@@ -26,6 +26,6 @@ class AccessoryItem extends Model
 
     public function option(): BelongsToMany
     {
-        return $this->belongsToMany(Color::class, 'color_color_item');
+        return $this->belongsToMany(Accessory::class, 'accessory_accessory_item');
     }
 }

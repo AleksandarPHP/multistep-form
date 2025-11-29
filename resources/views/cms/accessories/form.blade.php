@@ -34,7 +34,7 @@
                         <label for="product_id">Produkte</label>
                         <select name="product_ids[]" multiple="multiple" class="form-control" id="product_ids" {!! $errors->has('product_ids') ? 'style="border-color:red;"' : '' !!}>
                             @foreach ($products as $product)
-                                <option value="{{ $product->id }}" >{{$product->title}} (id:{{ $product->id }})</option>
+                                <option value="{{ $product->id }}" @selected(in_array($product->id, $item->product_id))>{{$product->title}} (id:{{ $product->id }})</option>
                             @endforeach
                         </select>
                     </div>

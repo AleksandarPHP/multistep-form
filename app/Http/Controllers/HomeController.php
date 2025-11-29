@@ -47,10 +47,24 @@ class HomeController extends Controller
     public function konfigurator(Request $request)
     {
         $html = '<b>Was suchen sie:</b> '.htmlspecialchars($request->input('advisor')).'<br>';
-
         if($request->input('product')!='') $html .= '<b>Produkte :</b> '.htmlspecialchars($request->input('product')).'<br>';
         if($request->input('product_position')!='') $html .= '<b>Wo soll das Produkt stehen:</b> '.htmlspecialchars($request->input('product_position')).'<br>';
-
+        foreach ($request->option as $key => $value) {
+            $option = Option::find($key);
+            $html .= '<b>'.$option->title.':</b> '.htmlspecialchars($value).'<br>';
+        }
+        foreach ($request->accessory as $key => $value) {
+            $accessory = Accessory::find($key);
+            $html .= '<b>'.$accessory->title.':</b> '.htmlspecialchars($value).'<br>';
+        }
+        foreach ($request->surface as $key => $value) {
+            $surface = Surface::find($key);
+            $html .= '<b>'.$surface->title.':</b> '.htmlspecialchars($value).'<br>';
+        }
+        foreach ($request->color as $key => $value) {
+            $color = Color::find($key);
+            $html .= '<b>'.$color->title.':</b> '.htmlspecialchars($value).'<br>';
+        }
         if($request->input('message')!='') $html .= '<b>Möchten Sie uns noch etwas mitteilen:</b> '.htmlspecialchars($request->input('message')).'<br>';
         if($request->input('sex')!='') $html .= '<b>Geschlecht:</b> '.htmlspecialchars($request->input('sex')).'<br>';
         if($request->input('firstname')!='') $html .= '<b>Vorname:</b> '.htmlspecialchars($request->input('firstname')).'<br>';

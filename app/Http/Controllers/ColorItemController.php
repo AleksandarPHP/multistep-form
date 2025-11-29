@@ -96,7 +96,7 @@ class ColorItemController extends Controller
             'title' => $request->title,
             'priority' => $request->priority,
             'price' => $request->price,
-            // 'option_id' => $request->option_ids,
+            'is_active' => $request->is_active ? 1 : 0,
             'image' => $image
         ]);
         $option->option()->sync($request->option_ids);
