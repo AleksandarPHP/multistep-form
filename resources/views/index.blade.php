@@ -221,7 +221,7 @@
                 </div>
               </div>
             </div>
-            @include('partials.price-info')
+            {{-- @include('partials.price-info') --}}
             <div class="form-navigation mt-4">
               <div class="row">
                 <div class="col-6 text-start">

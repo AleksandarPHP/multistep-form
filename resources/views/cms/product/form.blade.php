@@ -26,21 +26,27 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="title">Order</label>
-                        <input name="order" type="number" class="form-control" id="order" placeholder="Name" value="{{ old('order', $item->order) }}" {!! $errors->has('order') ? 'style="border-color:red;"' : '' !!}>
+                        <input name="order" type="number" class="form-control" id="order" placeholder="Order" value="{{ old('order', $item->order) }}" {!! $errors->has('order') ? 'style="border-color:red;"' : '' !!}>
                     </div>
                 </div>
                 <div class="col-md-12"><hr></div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="price">Preis</label>
-                        <input name="price" type="number" class="form-control" id="price" placeholder="Name" value="{{ old('price', $item->price) }}" {!! $errors->has('price') ? 'style="border-color:red;"' : '' !!}>
+                        <input name="price" type="number" class="form-control" id="price" placeholder="Preis" value="{{ old('price', $item->price) }}" {!! $errors->has('price') ? 'style="border-color:red;"' : '' !!}>
                     </div>
                 </div>
                 <div class="col-md-12"><hr></div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="price_range">Preisklasse</label>
-                        <input name="price_range" type="number" class="form-control" id="price_range" placeholder="Name" value="{{ old('price_range', $item->price_range) }}" {!! $errors->has('price_range') ? 'style="border-color:red;"' : '' !!}>
+                        <input name="price_range" type="number" class="form-control" id="price_range" placeholder="Preisklasse" value="{{ old('price_range', $item->price_range) }}" {!! $errors->has('price_range') ? 'style="border-color:red;"' : '' !!}>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="instalation">Installationskosten</label>
+                        <input name="instalation" type="number" class="form-control" id="instalation" placeholder="Installationskosten" value="{{ old('instalation', $item->instalation) }}" {!! $errors->has('instalation') ? 'style="border-color:red;"' : '' !!}>
                     </div>
                 </div>
                 <div class="col-md-12"><hr></div>

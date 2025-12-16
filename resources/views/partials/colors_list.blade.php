@@ -47,4 +47,46 @@
             </div>
         </div>
     @endforeach
+
+ <div id="card-s2">
+                <div class="row">
+                    <div class="col-12">
+                    <p class="subtitle">
+                        Installation?
+                    </p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="choice-card card-color color-2 selected" data-color-id="2">
+                            <div class="choice-image">
+                                <img src="/cmsfiles/images/placeholder-images.jpg" alt="Verkehrsweiß" class="img-fluid">
+                            </div>
+                            <div class="choice-text">
+                            <p>mit Installation</p>
+                            </div>
+                        </div>
+                    </div>
+                                    <div class="col-lg-3 col-md-6">
+                        <div class="choice-card card-color color-2" data-color-id="2">
+                            <div class="choice-image">
+                                <img src="/cmsfiles/images/placeholder-images.jpg" alt="Weißaluminium" class="img-fluid">
+                            </div>
+                            <div class="choice-text">
+                            <p>ohne Installation</p>
+                            </div>
+                        </div>
+                    </div>
+                                <script>
+                    $(document).on('click', '.card-color', function() {
+                        let id = $(this).data('color-id');
+                        $('.color-' + id).removeClass('selected');
+                        $('.color-' + id).parent().find('input').prop('checked', false)
+                                                
+                        $(this).addClass('selected')
+                        $(this).parent().find('input').prop('checked', true)
+                        });
+                </script>
+            </div>
+        </div>
 </div>
