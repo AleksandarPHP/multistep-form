@@ -47,6 +47,21 @@
               <div class="form-step active" data-step="0">
                 <div class="row g-4">
                   <div class="col-md-6">
+                    <div class="choice-card card-home selected">
+                      <div class="choice-image">
+                        <img
+                          src="{{ asset('assets/images/Ikonwwhatiwill.png')}}"
+                          alt="I need advice"
+                          class="img-fluid"
+                        />
+                      </div>
+                      <div class="choice-text">
+                        <p>Ich suche Beratung</p>
+                        <input class="d-none"type="radio" name="advisor" value="Ich suche Beratung" checked>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
                     <div class="choice-card card-home">
                       <div class="choice-image">
                         <img
@@ -58,21 +73,6 @@
                       <div class="choice-text">
                         <p>Ich weiß schon was ich will</p>
                         <input class="d-none" type="radio" name="advisor" value="Ich weiß schon was ich will">
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="choice-card card-home">
-                      <div class="choice-image">
-                        <img
-                          src="{{ asset('assets/images/Ikonwwhatiwill.png')}}"
-                          alt="I need advice"
-                          class="img-fluid"
-                        />
-                      </div>
-                      <div class="choice-text">
-                        <p>Ich suche Beratung</p>
-                        <input class="d-none"type="radio" name="advisor" value="Ich suche Beratung">
                       </div>
                     </div>
                   </div>
@@ -221,7 +221,7 @@
                 </div>
               </div>
             </div>
-            {{-- @include('partials.price-info') --}}
+            @include('partials.price-info')
             <div class="form-navigation mt-4">
               <div class="row">
                 <div class="col-6 text-start">

@@ -54,8 +54,9 @@ class ProductController extends Controller
             $data[] = [
                 '0' => $row->id,
                 '1' => $row->title,
-                '2' => '<span class="item-active" style="color: #0b3663;"><i class="fa fa-'.($row->is_active ? 'check-square' : 'times').'"></i></span>',
-                '3' => '<a href="'.url('cms/products/'.$row->id.'/edit').'" class="action-edit"><i class="fa fa-edit"></i></a><a href="'.url('cms/products').'" class="action-delete confirmation" data-id="'.$row->id.'"><i class="fa fa-trash"></i><form id="delete-form'.$row->id.'" action="'.url('cms/product-position/'.$row->id).'" method="POST" style="display: none;">'.csrf_field().'<input type="hidden" name="_method" value="delete" /></form></a>',
+                '2' => $row->price,
+                '3' => '<span class="item-active" style="color: #0b3663;"><i class="fa fa-'.($row->is_active ? 'check-square' : 'times').'"></i></span>',
+                '4' => '<a href="'.url('cms/products/'.$row->id.'/edit').'" class="action-edit"><i class="fa fa-edit"></i></a><a href="'.url('cms/products').'" class="action-delete confirmation" data-id="'.$row->id.'"><i class="fa fa-trash"></i><form id="delete-form'.$row->id.'" action="'.url('cms/product-position/'.$row->id).'" method="POST" style="display: none;">'.csrf_field().'<input type="hidden" name="_method" value="delete" /></form></a>',
             ];
         }
         
@@ -89,6 +90,7 @@ class ProductController extends Controller
             'order' => $request->order,
             'price' => $request->price,
             'price_range' => $request->price_range,
+            'instalation' => $request->instalation,
             'is_active' => $request->is_active ? 1 : 0,
             'image' => $image
         ]);
@@ -126,6 +128,7 @@ class ProductController extends Controller
         $item->price = $request->price;
         $item->price_range = $request->price_range;
         $item->order = $request->order;
+        $item->instalation = $request->instalation;
         $item->is_active = $request->is_active ? 1 : 0;
         $item->image = $image;
         

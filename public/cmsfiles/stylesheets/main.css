@@ -97,7 +97,10 @@ hr {
   font-weight: 600;
 }
 .fa-edit {
-  margin-right: 10px;
+  margin-right: 25px;
+}
+.fa, .fas {
+  font-size: 16px !important;
 }
 .button i,
 .button:active i,

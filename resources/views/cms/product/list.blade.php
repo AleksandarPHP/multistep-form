@@ -21,6 +21,7 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Preis</th>
                     <th>Status</th>
                     <th class="nosort text-center">Aktion</th>
                 </tr>
@@ -28,7 +29,8 @@
                 <tfoot>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th> 
+                    <th>Name</th>
+                    <th>Preis</th>
                     <th>Status</th>
                     <th class="nosort text-center">Aktion</th>
                 </tr>

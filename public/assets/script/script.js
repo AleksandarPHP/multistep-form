@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const steps = document.querySelectorAll(".form-step");
   const progressSteps = document.querySelectorAll(".form-progress-step");
   const progressWrapper = document.querySelector(".form-progress-wrapper");
+  const totalPrice = document.querySelector("#total-price");
+        totalPrice.style.display = "none";
+
 
   let currentStep = 0;
   const totalSteps = 7;
@@ -73,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         currentStep !== 6
       ) {
         progressWrapper.style.display = "block";
+        totalPrice.style.display = "block";
       } else if (currentStep === 6) {
         progressWrapper.style.display = "none";
       }
@@ -111,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (currentStep === 0 || currentStep === 7) {
         progressWrapper.style.display = "none";
+        totalPrice.style.display = "none";
       } else {
         progressWrapper.style.display = "block";
       }
@@ -182,6 +187,13 @@ $(".produktePosition").click(function() {
   $(this).addClass('selected')
   $(this).parent().find('input').prop('checked', true)
 });
+
+$(".card-instalation").click(function() {
+  $(".card-instalation").removeClass('selected');
+  $(this).addClass('selected')
+  $(this).parent().find('input').prop('checked', true)
+});
+
 
 $(".card-home").click(function() {
   $(".card-home").removeClass('selected');

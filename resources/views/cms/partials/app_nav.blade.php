@@ -10,7 +10,7 @@
         <a href="{{ url('cms/products') }}"><i class="fas fa-cubes"></i>Produkte</a>
       </li>
       <li @if(request()->is('cms/product-position*'))class="active"@endif>
-        <a href="{{ url('cms/product-position') }}"><i class="fas fa-building"></i>Produkte Position</a>
+        <a href="{{ url('cms/product-position') }}"><i class="fas fa-object-group"></i>Produkte Position</a>
       </li>
       <li @if(request()->is('cms/options*'))class="active"@endif>
         <a href="{{ url('cms/options') }}"><i class="fas fa-cogs"></i>Optionen</a>

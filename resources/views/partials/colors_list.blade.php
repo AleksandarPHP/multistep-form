@@ -42,7 +42,7 @@
                                                 
                         $(this).addClass('selected')
                         $(this).parent().find('input').prop('checked', true)
-                        });
+                    });
                 </script>
             </div>
         </div>
@@ -58,34 +58,33 @@
                 </div>
                 <div class="row g-4">
                     <div class="col-lg-3 col-md-6">
-                        <div class="choice-card card-color color-2 selected" data-color-id="2">
+                        <div class="choice-card card-instalation">
                             <div class="choice-image">
-                                <img src="/cmsfiles/images/placeholder-images.jpg" alt="Verkehrsweiß" class="img-fluid">
+                                <img src="/cmsfiles/images/placeholder-images.jpg" alt="mit Installation" class="img-fluid">
                             </div>
                             <div class="choice-text">
                             <p>mit Installation</p>
+                            <input class="d-none"type="radio" data-price="{{ $product->price }}" name="instalation" id="instalation1" value="{{ $product->instalation }}">
                             </div>
                         </div>
                     </div>
-                                    <div class="col-lg-3 col-md-6">
-                        <div class="choice-card card-color color-2" data-color-id="2">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="choice-card card-instalation" >
                             <div class="choice-image">
-                                <img src="/cmsfiles/images/placeholder-images.jpg" alt="Weißaluminium" class="img-fluid">
+                                <img src="/cmsfiles/images/placeholder-images.jpg" alt="ohne Installation" class="img-fluid">
                             </div>
                             <div class="choice-text">
                             <p>ohne Installation</p>
+                            <input class="d-none"type="radio" name="instalation" id="instalation2" value="0">
                             </div>
                         </div>
                     </div>
-                                <script>
-                    $(document).on('click', '.card-color', function() {
-                        let id = $(this).data('color-id');
-                        $('.color-' + id).removeClass('selected');
-                        $('.color-' + id).parent().find('input').prop('checked', false)
-                                                
+                    <script>
+                    $(document).on('click', '.card-instalation', function() {
+                        $(".card-instalation").removeClass('selected');
                         $(this).addClass('selected')
                         $(this).parent().find('input').prop('checked', true)
-                        });
+                    });
                 </script>
             </div>
         </div>

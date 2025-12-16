@@ -1,4 +1,4 @@
-                <div class="row mt-5 d-none" id="total-price">
+                <div class="row mt-5" id="total-price">
                   <div class="col-lg-8 col-md-10 mx-auto">
                     <div class="price-info-box">
                       <h3 class="price-info-title">

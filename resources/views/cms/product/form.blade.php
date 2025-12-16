@@ -43,6 +43,7 @@
                         <input name="price_range" type="number" class="form-control" id="price_range" placeholder="Preisklasse" value="{{ old('price_range', $item->price_range) }}" {!! $errors->has('price_range') ? 'style="border-color:red;"' : '' !!}>
                     </div>
                 </div>
+                <div class="col-md-12"><hr></div>
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="instalation">Installationskosten</label>

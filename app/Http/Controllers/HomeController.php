@@ -40,7 +40,8 @@ class HomeController extends Controller
     public function showColors(Request $request)
     {
         $colors = Color::whereRaw('JSON_CONTAINS(product_id, ?)', [json_encode($request->id)])->get();
-        return response()->json(['colors' => view('partials.colors_list', ['colors' => $colors])->render()], 200);
+        $product = Product::find($request->id);
+        return response()->json(['colors' => view('partials.colors_list', ['colors' => $colors, 'product' => $product])->render()], 200);
     }
 
     public function showSurfaces(Request $request)
@@ -105,9 +106,12 @@ class HomeController extends Controller
             $html .= '<tr><th scope="row">'.$surface->title.'</th><td scope="row" colspan="2">'.$value.'</td></tr>';
         }
         $sum[] = $dimension->price;
+        if($request->instalation!='' && $request->instalation != 0){
+            $html .= '<tr><th scope="row">Instalation </th><td scope="row" colspan="2"><b><input name="sum" class="form-control" type="number" value="'.$request->instalation.'"></b></td></tr>';
+            $sum[] = intval($request->instalation);
+        } 
         $html .= '<tr><th scope="row">Zusammenfassung Preis</th><td scope="row" colspan="2"><b><input name="sum" class="form-control" type="number" value="'.array_sum($sum).'"></b></td></tr>';
-        $html .= '</tbody>
-</table><br>';
+        $html .= '</tbody></table><br>';
         if($request->input('message')!='') $html .= '<b>Möchten Sie uns noch etwas mitteilen:</b> '.htmlspecialchars($request->input('message')).'<br>';
         if($request->input('sex')!='') $html .= '<b>Geschlecht:</b> '.htmlspecialchars($request->input('sex')).'<br>';
         if($request->input('firstname')!='') $html .= '<b>Vorname:</b> '.htmlspecialchars($request->input('firstname')).'<br>';
