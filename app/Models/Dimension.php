@@ -5,15 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Dimension extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'order',
-        'image',
+        'dimension1',
+        'dimension2',
+        'product_id',
         'price',
-        'price_range'
+    ];
+
+    protected $casts = [
+        'product_id' => 'array',
     ];
 }

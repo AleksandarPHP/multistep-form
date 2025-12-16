@@ -171,9 +171,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 $(".card-option").click(function() {
   $(".card-option").removeClass('selected');
-  $(this).addClass('selected')
-  $(this).parent().find('input').prop('checked', true)
-  showOptionItems($(this).data('id'))
+  $(this).addClass('selected');
+  $(this).parent().find('input').prop('checked', true);
+  showOptionItems($(this).data('id'));
+  calculatePrice($(this).parent().find('input').data('price'), $(this).parent().find('input').data('price-range'));
 });
 
 $(".produktePosition").click(function() {
@@ -187,7 +188,16 @@ $(".card-home").click(function() {
   $(this).addClass('selected')
   $(this).parent().find('input').prop('checked', true)
 });
+ function calculatePrice(price, price_range = null) {
+    var priceRange = price_range;
+    var itemPrice = price;
 
+    var max = price + price_range;
+    var min = price - price_range;
+    $("#total-price").removeClass('d-none');
+    $("#price-value-min").text(min);
+    $("#price-value-max").text(max);
+  }
 var loadingAddToCart = false;
 function showOptionItems(id) {
   if(loadingAddToCart === false) {  

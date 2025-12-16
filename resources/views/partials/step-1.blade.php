@@ -32,7 +32,7 @@
                       </div>
                       <div class="choice-text">
                         <p>{{$product->title}}</p>
-                        <input class="d-none" type="radio" data-price="{{$product->title}}" name="product" id="{{$product->id}}" value="{{$product->title}}" @if($loop->first) checked data-first="{{$product->id}}" @endif>
+                        <input class="d-none" type="radio" data-price="{{$product->price}}" data-price-range="{{$product->price_range}}" name="product" id="{{$product->id}}" value="{{$product->id}}" @if($loop->first) checked data-first="{{$product->id}}" @endif>
                       </div>
                     </div>
                   </div>
@@ -69,7 +69,7 @@
                       </div>
                       <div class="choice-text">
                         <p>{{ $item->title }}</p>
-                        <input class="d-none"type="radio" data-price="{{ $item->price }}" name="product_position" id="product_position_{{ $item->id }}" value="{{$item->title}}">
+                        <input class="d-none"type="radio" data-price="{{ $item->price }}" name="product_position" id="product_position_{{ $item->id }}" value="{{$item->id}}">
                       </div>
                     </div>
                   </div>
@@ -117,10 +117,14 @@
 
 <script>
   $(document).ready(function () {
-    let first = $('input[data-first]').data('first');
-    
-    if (first) {
-        showOptionItems(first);
+    let firstItem = $('input[data-first]');
+
+    let firstItemid = firstItem.data('first');
+    let firstItemPrice = firstItem.data('price');
+    let firstItemPriceRange = firstItem.data('price-range');
+    if (firstItemid) {
+        showOptionItems(firstItemid);
+        calculatePrice(firstItemPrice, firstItemPriceRange);
     }
 });
 </script>

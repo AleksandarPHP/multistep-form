@@ -29,7 +29,7 @@
                             </div>
                             <div class="choice-text">
                             <p>{{ $item->title }}</p>
-                            <input class="d-none"type="radio" data-price="1225.23" name="accessory[{{ $accessory->id }}]" id="" value="{{ $item->title }}" @checked($loop->first)>
+                            <input class="d-none"type="radio" data-price="1225.23" name="accessory[{{ $accessory->id }}]" id="" value="{{ $item->id }}" @checked($loop->first)>
                             </div>
                         </div>
                     </div>

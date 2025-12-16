@@ -24,6 +24,12 @@
       <li @if(request()->is('cms/surfaces*'))class="active"@endif>
         <a href="{{ url('cms/surfaces') }}"><i class="fas fa-list-ol"></i>Oberflächen</a>
       </li>
+      <li @if(request()->is('cms/dimensions*'))class="active"@endif>
+        <a href="{{ url('cms/dimensions') }}"><i class="fas fa-th-large"></i>Abmessungen</a>
+      </li>
+      <li @if(request()->is('cms/mails*'))class="active"@endif>
+        <a href="{{ url('cms/mails') }}"><i class="fas fa-envelope"></i>E-mail</a>
+      </li>
       <li @if(request()->is('cms/settings/1/edit*'))class="active"@endif>
         <a href="{{ url('cms/settings/1/edit') }}"><i class="fas fa-cog"></i>Einstellungen</a>
       </li>

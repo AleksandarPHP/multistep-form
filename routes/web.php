@@ -85,6 +85,9 @@ Route::group(['prefix' => 'cms', 'middleware' => ['auth', 'active']], function()
 
     Route::resource('surfaces', 'App\Http\Controllers\SurfaceController')->except('show');
     Route::post('surfaces/ajax', 'App\Http\Controllers\SurfaceController@ajax');
+
+    Route::resource('dimensions', 'App\Http\Controllers\DimensionController')->except('show');
+    Route::post('dimensions/ajax', 'App\Http\Controllers\DimensionController@ajax');
     
     Route::resource('mails', 'App\Http\Controllers\MailController')->except('show');
     Route::post('mails/ajax', 'App\Http\Controllers\MailController@ajax');

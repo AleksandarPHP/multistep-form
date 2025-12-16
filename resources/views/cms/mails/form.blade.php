@@ -22,7 +22,8 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-danger mb-3 mt-4">Speichern</button>
+            <button type="submit" class="btn btn-danger mb-3 mt-4">Aktualisieren</button>
+            <a href="#" class="btn btn-secondary mb-3 mt-4" style="margin-left: 10px">E-Mail senden</a>
         </form>
     </div>
 </div>

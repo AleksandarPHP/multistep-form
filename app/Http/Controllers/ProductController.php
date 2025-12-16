@@ -88,6 +88,7 @@ class ProductController extends Controller
             'title' => $request->title,
             'order' => $request->order,
             'price' => $request->price,
+            'price_range' => $request->price_range,
             'is_active' => $request->is_active ? 1 : 0,
             'image' => $image
         ]);
@@ -123,6 +124,7 @@ class ProductController extends Controller
         
         $item->title = $request->title;
         $item->price = $request->price;
+        $item->price_range = $request->price_range;
         $item->order = $request->order;
         $item->is_active = $request->is_active ? 1 : 0;
         $item->image = $image;

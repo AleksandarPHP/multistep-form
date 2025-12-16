@@ -22,13 +22,14 @@
         @php
         $moduli = array(
           array('cms/products', 'Produkte', 'cubes'),
-          array('cms/products-position', 'Produkte position', 'building'),
+          array('cms/product-position', 'Produkte position', 'building'),
           array('cms/options', 'Optionen', 'cogs'),
           array('cms/accessories', 'Zubehör', 'wrench'),
           array('cms/colors', 'Muster', 'palette'),
           array('cms/surfaces', 'Oberflächen', 'list-ol'),
           array('cms/mails', 'E-Mails', 'envelope'),
           array('cms/settings/1/edit', 'Einstellungen', 'cog'),
+          array('cms/dimensions', 'Abmessungen', 'th-large'),
           array('cms/users', 'Benutzer', 'users'),
 
         );

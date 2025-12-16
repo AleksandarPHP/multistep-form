@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Accessory;
+use App\Models\AccessoryItem;
 use App\Models\Album;
 use App\Models\Apartment;
 use App\Models\Color;
+use App\Models\ColorItem;
+use App\Models\Dimension;
 use App\Models\Mail;
 use App\Models\Option;
+use App\Models\OptionItem;
+use App\Models\Product;
+use App\Models\ProductPosition;
 use App\Models\Surface;
 use App\Notifications\Konfigurator;
 use App\Models\Floor;
@@ -40,31 +46,68 @@ class HomeController extends Controller
     public function showSurfaces(Request $request)
     {
         $surfaces = Surface::whereRaw('JSON_CONTAINS(product_id, ?)', [json_encode($request->id)])->get();
-        \Illuminate\Support\Facades\Log::info($surfaces);
         return response()->json(['surfaces' => view('partials.surfaces_list', ['surfaces' => $surfaces])->render()], 200);
     }
 
     public function konfigurator(Request $request)
     {
+
+
+//     <tr>
+//       <th scope="row">1</th>
+//       <td>Mark</td>
+//     </tr>
+//   </tbody>
+// </table>
+        // dd($request->all());
+        $sum = [];
+        $product = Product::find($request->product);
+        $dimension = Dimension::whereRaw('JSON_CONTAINS(product_id, ?)', [json_encode($request->product)])->where('dimension1',$request->surface[1])->where('dimension2', $request->surface[3])->first();
+
         $html = '<b>Was suchen sie:</b> '.htmlspecialchars($request->input('advisor')).'<br>';
-        if($request->input('product')!='') $html .= '<b>Produkte :</b> '.htmlspecialchars($request->input('product')).'<br>';
-        if($request->input('product_position')!='') $html .= '<b>Wo soll das Produkt stehen:</b> '.htmlspecialchars($request->input('product_position')).'<br>';
+        $html .= '<table class="table table-bordered">
+        <thead>
+            <tr>
+            <th scope="col">Produkte:</th>
+            <th scope="col">'.$product->title.'</th>
+            <th scope="col">'.$dimension->price.'</th>
+            </tr>
+        </thead>
+        <tbody>';
+
+        $product_position = ProductPosition::find($request->product);
+        $html .= '<tr><th scope="row">Wo soll das Produkt stehen</th><td scope="row">'.$product_position->title.'</td><td><input class="form-control" name="product_position" type="number" value="'.$product_position->price.'"></td></tr>';
+        $sum[] = $product_position->price;
         foreach ($request->option as $key => $value) {
             $option = Option::find($key);
-            $html .= '<b>'.$option->title.':</b> '.htmlspecialchars($value).'<br>';
+            $option_item = OptionItem::find($value);
+            $html .= '<tr><th scope="row">'.$option->title.'</th><td scope="row">'.$option_item->title.'</td><td><input class="form-control" name="option" type="number" value="'.$option_item->price.'"></td></tr>';
+            $sum[] = $option_item->price;
         }
+                                                                                                            
         foreach ($request->accessory as $key => $value) {
             $accessory = Accessory::find($key);
-            $html .= '<b>'.$accessory->title.':</b> '.htmlspecialchars($value).'<br>';
+            $accessory_item = AccessoryItem::find($value);
+            $html .= '<tr><th scope="row">'.$accessory->title.'</th><td scope="row">'.$accessory_item->title.'</td><td><input class="form-control" name="accessory" type="number" value="'.$accessory_item->price.'"></td></tr>';
+            $sum[] = $accessory_item->price;
+
+        }
+
+        foreach ($request->color as $key => $value) {
+            $color = Color::find($key);
+            $color_item = ColorItem::find($value);
+            $html .= '<tr><th scope="row">'.$color->title.'</th><td scope="row">'.$color_item->title.'</td><td><input class="form-control" name="color" type="number" value="'.$color_item->price.'"></td></tr>';
+            $sum[] = $color_item->price;
+
         }
         foreach ($request->surface as $key => $value) {
             $surface = Surface::find($key);
-            $html .= '<b>'.$surface->title.':</b> '.htmlspecialchars($value).'<br>';
+            $html .= '<tr><th scope="row">'.$surface->title.'</th><td scope="row" colspan="2">'.$value.'</td></tr>';
         }
-        foreach ($request->color as $key => $value) {
-            $color = Color::find($key);
-            $html .= '<b>'.$color->title.':</b> '.htmlspecialchars($value).'<br>';
-        }
+        $sum[] = $dimension->price;
+        $html .= '<tr><th scope="row">Zusammenfassung Preis</th><td scope="row" colspan="2"><b><input name="sum" class="form-control" type="number" value="'.array_sum($sum).'"></b></td></tr>';
+        $html .= '</tbody>
+</table><br>';
         if($request->input('message')!='') $html .= '<b>Möchten Sie uns noch etwas mitteilen:</b> '.htmlspecialchars($request->input('message')).'<br>';
         if($request->input('sex')!='') $html .= '<b>Geschlecht:</b> '.htmlspecialchars($request->input('sex')).'<br>';
         if($request->input('firstname')!='') $html .= '<b>Vorname:</b> '.htmlspecialchars($request->input('firstname')).'<br>';

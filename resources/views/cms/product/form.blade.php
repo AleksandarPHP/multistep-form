@@ -38,6 +38,13 @@
                 </div>
                 <div class="col-md-12"><hr></div>
                 <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="price_range">Preisklasse</label>
+                        <input name="price_range" type="number" class="form-control" id="price_range" placeholder="Name" value="{{ old('price_range', $item->price_range) }}" {!! $errors->has('price_range') ? 'style="border-color:red;"' : '' !!}>
+                    </div>
+                </div>
+                <div class="col-md-12"><hr></div>
+                <div class="col-md-12">
                     <label class="form-check-label" for="flexSwitchCheckChecked">Aktiv?</label>
                     <div class="form-check form-switch">
                         <input name="is_active" value="1" class="form-check-input" style="padding-left: 35px; padding-top:20px;" type="checkbox" role="switch" id="flexSwitchCheckChecked" @checked(old('is_active', $item->is_active))>
