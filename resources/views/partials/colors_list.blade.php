@@ -52,7 +52,7 @@
         <div class="row">
             <div class="col-12">
                 <p class="subtitle">
-                    Installation?
+                    Montage ?
                 </p>
             </div>
         </div>
@@ -63,7 +63,7 @@
                         <img src="/cmsfiles/images/placeholder-images.jpg" alt="mit Installation" class="img-fluid">
                     </div>
                     <div class="choice-text">
-                    <p>mit Installation</p>
+                    <p>mit Montage</p>
                     <input class="d-none"type="radio" data-price="{{ $product->price }}" name="instalation" id="instalation1" value="{{ $product->instalation }}">
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                         <img src="/cmsfiles/images/placeholder-images.jpg" alt="ohne Installation" class="img-fluid">
                     </div>
                     <div class="choice-text">
-                        <p>ohne Installation</p>
+                        <p>ohne Montage</p>
                         <input class="d-none"type="radio" name="instalation" id="instalation2" value="0">
                     </div>
                 </div>
