@@ -84,7 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
       document
         .querySelector(`.form-step[data-step="${currentStep}"]`)
         .classList.add("active");
+      const step = document.querySelector(`.form-step[data-step="${currentStep}"]`);
 
+const selectedInputs = step.querySelectorAll('input:checked, select, textarea');
+
+console.log(selectedInputs);
       if (currentStep > 0) {
         progressSteps.forEach((step, index) => {
           step.classList.remove("active");
@@ -179,7 +183,7 @@ $(".card-option").click(function() {
   $(this).addClass('selected');
   $(this).parent().find('input').prop('checked', true);
   showOptionItems($(this).data('id'));
-  calculatePrice($(this).parent().find('input').data('price'), $(this).parent().find('input').data('price-range'));
+  // calculatePrice($(this).parent().find('input').data('price'), $(this).parent().find('input').data('price-range'));
 });
 
 $(".produktePosition").click(function() {
@@ -203,16 +207,17 @@ $(".card-home").click(function() {
  function calculatePrice(price, price_range = null) {
     var priceRange = price_range;
     var itemPrice = price;
-
+                            console.log($('.selected'));
+    
     var max = price + price_range;
     var min = price - price_range;
     $("#total-price").removeClass('d-none');
     $("#price-value-min").text(min);
     $("#price-value-max").text(max);
   }
-var loadingAddToCart = false;
+var loadingshowOptionItems = false;
 function showOptionItems(id) {
-  if(loadingAddToCart === false) {  
+  if(loadingshowOptionItems === false) {  
     $.ajax({
       url: "/show-options",
       method: 'POST',
@@ -221,7 +226,7 @@ function showOptionItems(id) {
       success: function(data) {
         
         $('#options-list').html(data.options);
-        loadingAddToCart = false;
+        loadingshowOptionItems = false;
       }, error: function(data) {              
         var message = data.responseJSON.message;
         if(message == '') message = errorMessage;
@@ -233,7 +238,7 @@ function showOptionItems(id) {
         }
         $('#product_modal .alert-danger').text(message).show();
         $('#product_modal').modal();
-        loadingAddToCart = false;
+        loadingshowOptionItems = false;
       }
     });
 
@@ -245,7 +250,7 @@ function showOptionItems(id) {
       success: function(data) {
         
         $('#accessories-list').html(data.accessories);
-        loadingAddToCart = false;
+        loadingshowOptionItems = false;
       }, error: function(data) {              
         var message = data.responseJSON.message;
         if(message == '') message = errorMessage;
@@ -257,7 +262,7 @@ function showOptionItems(id) {
         }
         $('#product_modal .alert-danger').text(message).show();
         $('#product_modal').modal();
-        loadingAddToCart = false;
+        loadingshowOptionItems = false;
       }
     });
 
@@ -269,7 +274,7 @@ function showOptionItems(id) {
       success: function(data) {
         
         $('#colors-list').html(data.colors);
-        loadingAddToCart = false;
+        loadingshowOptionItems = false;
       }, error: function(data) {              
       }
     });
@@ -282,9 +287,9 @@ function showOptionItems(id) {
       success: function(data) {
       
       $('#surfaces-list').html(data.surfaces);
-        loadingAddToCart = false;
+        loadingshowOptionItems = false;
       }, error: function(data) {              
-        loadingAddToCart = false;
+        loadingshowOptionItems = false;
       }
     });
   }

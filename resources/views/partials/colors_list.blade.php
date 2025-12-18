@@ -48,44 +48,48 @@
         </div>
     @endforeach
 
- <div id="card-s2">
-                <div class="row">
-                    <div class="col-12">
-                    <p class="subtitle">
-                        Installation?
-                    </p>
-                    </div>
-                </div>
-                <div class="row g-4">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="choice-card card-instalation">
-                            <div class="choice-image">
-                                <img src="/cmsfiles/images/placeholder-images.jpg" alt="mit Installation" class="img-fluid">
-                            </div>
-                            <div class="choice-text">
-                            <p>mit Installation</p>
-                            <input class="d-none"type="radio" data-price="{{ $product->price }}" name="instalation" id="instalation1" value="{{ $product->instalation }}">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="choice-card card-instalation" >
-                            <div class="choice-image">
-                                <img src="/cmsfiles/images/placeholder-images.jpg" alt="ohne Installation" class="img-fluid">
-                            </div>
-                            <div class="choice-text">
-                            <p>ohne Installation</p>
-                            <input class="d-none"type="radio" name="instalation" id="instalation2" value="0">
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                    $(document).on('click', '.card-instalation', function() {
-                        $(".card-instalation").removeClass('selected');
-                        $(this).addClass('selected')
-                        $(this).parent().find('input').prop('checked', true)
-                    });
-                </script>
+    <div id="card-s2">
+        <div class="row">
+            <div class="col-12">
+                <p class="subtitle">
+                    Installation?
+                </p>
             </div>
         </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="choice-card card-instalation">
+                    <div class="choice-image">
+                        <img src="/cmsfiles/images/placeholder-images.jpg" alt="mit Installation" class="img-fluid">
+                    </div>
+                    <div class="choice-text">
+                    <p>mit Installation</p>
+                    <input class="d-none"type="radio" data-price="{{ $product->price }}" name="instalation" id="instalation1" value="{{ $product->instalation }}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="choice-card card-instalation" >
+                    <div class="choice-image">
+                        <img src="/cmsfiles/images/placeholder-images.jpg" alt="ohne Installation" class="img-fluid">
+                    </div>
+                    <div class="choice-text">
+                        <p>ohne Installation</p>
+                        <input class="d-none"type="radio" name="instalation" id="instalation2" value="0">
+                    </div>
+                </div>
+            </div>
+            <script>
+            $(document).on('click', '.card-instalation', function() {
+                $(".card-instalation").removeClass('selected');
+                $(this).addClass('selected')
+                $(this).parent().find('input').prop('checked', true)
+            });
+            </script>
+        </div>
+    </div>
 </div>
+<script>
+    console.log($('.selected'));
+    
+</script>

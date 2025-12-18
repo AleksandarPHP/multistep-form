@@ -71,7 +71,7 @@ class ProductPositionController extends Controller
 
     public function create()
     {
-        return view('cms.product_position.form', ['user' => new ProductPosition(), 'editing' => false]);
+        return view('cms.product_position.form', ['item' => new ProductPosition(), 'editing' => false]);
     }
 
     public function store(Request $request)
