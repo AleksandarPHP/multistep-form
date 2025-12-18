@@ -96,6 +96,7 @@ class AccessoryItemController extends Controller
             'title' => $request->title,
             'priority' => $request->priority,
             'price' => $request->price,
+            'is_active' => $request->is_active,
             // 'option_id' => $request->option_ids,
             'image' => $image
         ]);
