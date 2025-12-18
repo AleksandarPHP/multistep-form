@@ -12,6 +12,7 @@ class ProductPosition extends Model
         'title',
         'order',
         'image',
+        'is_active',
         'price'
     ];
 }

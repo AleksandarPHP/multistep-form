@@ -15,6 +15,7 @@ class Product extends Model
         'image',
         'price',
         'price_range',
+        'is_active',
         'instalation'
     ];
 }
