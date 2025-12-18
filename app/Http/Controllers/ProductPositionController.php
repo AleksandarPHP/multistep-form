@@ -85,8 +85,10 @@ class ProductPositionController extends Controller
     
         
         ProductPosition::create([
-            'title' => $request->name,
+            'title' => $request->title,
             'order' => $request->order,
+            'price' => $request->price,
+            'is_active' => $request->is_active ? 1 : 0,
             'image' => $image
         ]);
 
