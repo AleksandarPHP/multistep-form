@@ -140,6 +140,7 @@ textarea {
 
 .choice-image {
   overflow: hidden;
+  min-height: 140px;
 }
 
 .choice-image img {
