@@ -124,7 +124,7 @@
     let firstItemPriceRange = firstItem.data('price-range');
     if (firstItemid) {
         showOptionItems(firstItemid);
-        // calculatePrice(firstItemPrice, firstItemPriceRange);
+        // recalculateTotalPrice();
     }
 });
 </script>

@@ -42,6 +42,7 @@
 
                         $(this).addClass('selected')
                         $(this).parent().find('input').prop('checked', true)
+                        recalculateTotalPrice()
                         });
                 </script>
             </div>

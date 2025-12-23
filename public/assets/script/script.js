@@ -1,3 +1,5 @@
+  let currentStep = 0;
+  const totalSteps = 7;
 document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.querySelector(".btn-next");
   const prevBtn = document.querySelector(".btn-prev");
@@ -9,8 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         totalPrice.style.display = "none";
 
 
-  let currentStep = 0;
-  const totalSteps = 7;
+
 
   updateButtonState();
 
@@ -77,6 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
       ) {
         progressWrapper.style.display = "block";
         totalPrice.style.display = "block";
+        if (currentStep == 1) {
+          recalculateTotalPrice()
+        }
       } else if (currentStep === 6) {
         progressWrapper.style.display = "none";
       }
@@ -84,11 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document
         .querySelector(`.form-step[data-step="${currentStep}"]`)
         .classList.add("active");
-      const step = document.querySelector(`.form-step[data-step="${currentStep}"]`);
 
-const selectedInputs = step.querySelectorAll('input:checked, select, textarea');
-
-console.log(selectedInputs);
       if (currentStep > 0) {
         progressSteps.forEach((step, index) => {
           step.classList.remove("active");
@@ -183,19 +183,21 @@ $(".card-option").click(function() {
   $(this).addClass('selected');
   $(this).parent().find('input').prop('checked', true);
   showOptionItems($(this).data('id'));
-  // calculatePrice($(this).parent().find('input').data('price'), $(this).parent().find('input').data('price-range'));
+  recalculateTotalPrice();
 });
 
 $(".produktePosition").click(function() {
   $(".produktePosition").removeClass('selected');
   $(this).addClass('selected')
   $(this).parent().find('input').prop('checked', true)
+  recalculateTotalPrice();
 });
 
 $(".card-instalation").click(function() {
   $(".card-instalation").removeClass('selected');
   $(this).addClass('selected')
   $(this).parent().find('input').prop('checked', true)
+  recalculateTotalPrice();
 });
 
 
@@ -204,17 +206,45 @@ $(".card-home").click(function() {
   $(this).addClass('selected')
   $(this).parent().find('input').prop('checked', true)
 });
- function calculatePrice(price, price_range = null) {
-    var priceRange = price_range;
-    var itemPrice = price;
-                            console.log($('.selected'));
-    
-    var max = price + price_range;
-    var min = price - price_range;
-    $("#total-price").removeClass('d-none');
-    $("#price-value-min").text(min);
-    $("#price-value-max").text(max);
-  }
+
+const stepSelectors = {
+    1: [
+        'input[name="product"]:checked',
+        'input[name="product_position"]:checked'
+    ],
+    2: [
+        'input[name^="option["]:checked',
+        'input[name^="accessory["]:checked',
+        'input[name^="color["]:checked',
+        'input[name="instalation"]:checked'
+    ]
+};
+
+function recalculateTotalPrice() {
+    let total = 0;
+    let priceRange = 0;
+
+    for (let step = 1; step <= currentStep; step++) {
+        if (!stepSelectors[step]) continue;
+
+        stepSelectors[step].forEach(selector => {
+            $(selector).each(function () {
+                let price = parseFloat($(this).data('price'));
+                if (!isNaN(price)) {
+                    total += price;
+                }
+
+                if ($(this).data('price-range') !== undefined) {
+                    priceRange = parseFloat($(this).data('price-range')) || 0;
+                }
+            });
+        });
+    }
+
+    $('#price-value-min').text((total - priceRange).toFixed(2) + ' €');
+    $('#price-value-max').text((total + priceRange).toFixed(2) + ' €');
+}
+
 var loadingshowOptionItems = false;
 function showOptionItems(id) {
   if(loadingshowOptionItems === false) {  

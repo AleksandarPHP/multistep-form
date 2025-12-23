@@ -29,7 +29,7 @@
                             </div>
                             <div class="choice-text">
                             <p>{{ $item->title }}</p>
-                            <input class="d-none"type="radio" data-price="1225.23" name="color[{{ $color->id }}]" id="" value="{{ $item->id }}" @checked($loop->first)>
+                            <input class="d-none"type="radio" data-price="{{$item->price}}" name="color[{{ $color->id }}]" id="" value="{{ $item->id }}" @checked($loop->first)>
                             </div>
                         </div>
                     </div>
@@ -42,6 +42,7 @@
                                                 
                         $(this).addClass('selected')
                         $(this).parent().find('input').prop('checked', true)
+                        recalculateTotalPrice()
                     });
                 </script>
             </div>
@@ -64,7 +65,7 @@
                     </div>
                     <div class="choice-text">
                     <p>mit Montage</p>
-                    <input class="d-none"type="radio" data-price="{{ $product->price }}" name="instalation" id="instalation1" value="{{ $product->instalation }}">
+                    <input class="d-none"type="radio" data-price="{{ $product->instalation }}" name="instalation" id="instalation1" value="{{ $product->instalation }}">
                     </div>
                 </div>
             </div>
@@ -84,12 +85,9 @@
                 $(".card-instalation").removeClass('selected');
                 $(this).addClass('selected')
                 $(this).parent().find('input').prop('checked', true)
+                recalculateTotalPrice()
             });
             </script>
         </div>
     </div>
 </div>
-<script>
-    console.log($('.selected'));
-    
-</script>
